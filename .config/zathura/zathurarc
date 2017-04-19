@@ -1,0 +1,41 @@
+# zathurarc-dark
+
+set adjust-open width
+
+set font                        "Droid Sans Mono 8"
+set default-bg                  "#171717" #00
+set default-fg                  "#b2a191" #01
+
+set statusbar-fg                "#b2a191" #04
+set statusbar-bg                "#202020" #01
+
+set inputbar-bg                 "#171717" #00 currently not used
+set inputbar-fg                 "#b2a191" #02
+
+set notification-error-bg       "#bf3f34" #08
+set notification-error-fg       "#171717" #00
+
+set notification-warning-bg     "#826c5d" #08
+set notification-warning-fg     "#171717" #00
+
+set highlight-color             "#202020" #0A
+set highlight-active-color      "#657b83" #0D
+
+set completion-highlight-fg     "#171717" #02
+set completion-highlight-bg     "#75507b" #0C
+
+set completion-bg               "#202020" #02
+set completion-fg               "#b2a191" #0C
+
+set notification-bg             "#171717" #0B
+set notification-fg             "#4c544f" #00
+
+set recolor-lightcolor          "#171717" #00
+set recolor-darkcolor           "#b2a191" #06
+set recolor                     "true"
+
+# setting recolor-keep true will keep any color your pdf has.
+# if it is false, it'll just be black and white
+set recolor-keephue             "false"
+
+# Rest of your configs go here:

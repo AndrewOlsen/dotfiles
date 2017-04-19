@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+source "${HOME}/.cache/wal/colors.sh"
+
+reload_poly(){
+    pkill polybar && polybar example &
+}
+
+reload_dunst() {
+    pkill dunst && \
+        dunst \
+            -lb "$color15" \
+            -nb "$color15" \
+            -cb "$color15" \
+            -lf "$color0"  \
+            -bf "$color0"  \
+            -cf "$color9" &
+}
+
+main() {
+    reload_poly &
+    reload_dunst &
+}
+
+main >/dev/null 2>&1
