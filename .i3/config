@@ -31,8 +31,8 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec termite 
 
-# start chromium in web workspace
-bindsym $mod+c exec chromium
+# start inox in web workspace
+bindsym $mod+c exec /usr/bin/inox
 
 # start keepass
 bindsym $mod+p exec keepass
@@ -118,7 +118,7 @@ workspace 10 output LVDS
 
 # Assign programs to wkspc
 for_window [class="^Spotify$"] move to workspace $three
-assign [class="^Chromium$"] $two
+assign [class="^Inox$"] $two
 assign [class="^Firefox$"] $two
 assign [class="^VirtualBox$"] $four
 

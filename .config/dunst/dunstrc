@@ -146,7 +146,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/chromium --new-tab
+    browser = /usr/bin/inox --new-tab
 
     # Align icons left/right/off
     icon_position = left
