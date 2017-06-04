@@ -1,14 +1,15 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/andy/.oh-my-zsh
 # terminal for i3
-  export TERMINAL=/usr/bin/termite
+  export TERMINAL=/usr/bin/urxvtc
   export EDITOR=/usr/bin/vim
+  export BROWSER="/usr/bin/inox"
 # export PATH="/usr/local/bin:/usr/bin/core_perl:$PATH"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="classyTouch"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -56,9 +57,9 @@ plugins=(git archlinux sudo)
 
 # User configuration
 
-  export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/bin/core_perl"
+  export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/bin/core_perl:/home/andy/.gem/ruby/2.4.0/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
-  export VISUAL="vim" 
+export VISUAL="vim"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,8 +92,8 @@ alias doc="cd ~/Documents/"
 alias code="cd ~/Documents/code/"
 alias pt="cd ~/Documents/code/pentesterlabs/"
 alias t="todo.sh"
-alias vimi3="vim ~/.i3/config" 
-alias vimpoly="sudo vim ~/.config/polybar/config"
+alias vimi3="vim ~/.i3/config"
+alias vimpoly="vim ~/.config/polybar/config"
 alias vimzsh="vim ~/.zshrc"
 alias clip="xclip -selection clipboard"
 alias work="cd ~/Documents/work/"

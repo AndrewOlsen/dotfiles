@@ -1,4 +1,6 @@
 # vim: filetype=muttrc 
+#
+# Shamelessly taken from code.fsociety.info
 
 # set default
 color normal     default	default

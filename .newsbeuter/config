@@ -1,3 +1,5 @@
+# From code.fsociety.info
+
 auto-reload yes
 browser "[[ -n \"$( pgrep inox )\"  ]] && inox --incognito %u || w3m %u"
 feed-sort-order title-dec

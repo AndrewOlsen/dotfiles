@@ -14,7 +14,7 @@ print_info() {
     #info "Model" model
     info "Kernel" kernel
     info "Uptime" uptime
-    info "Packages" packages
+    #info "Packages" packages
     info "Shell" shell
     info "Resolution" resolution
     info "DE" de
@@ -23,7 +23,7 @@ print_info() {
     info "Theme" theme
     info "Icons" icons
     info "Terminal" term
-    info "Terminal Font" term_font
+    prin "Terminal Font" "Sauce Code Pro"
     info "CPU" cpu
     info "GPU" gpu
     #info "Memory" memory

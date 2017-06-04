@@ -1,5 +1,5 @@
 [global]
-    font = pango:monospace 8
+    font = Source Code Pro 10
 
     # Allow a small subset of html markup in notifications and formats:
     #   <b>bold</b>
@@ -155,8 +155,7 @@
     icon_folders = /usr/share/icons/Arc/status/16/:/usr/share/icons/Arc/devices/16/
 
 [frame]
-    width = 2
-    color = "#3A9892"
+    width = 0
 
 [shortcuts]
 
@@ -174,10 +173,10 @@
     # Redisplay last message(s).
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1".
-    history = ctrl+n
+    history = ctrl+period
 
     # Context menu.
-    context = ctrl+shift+n
+    context = ctrl+shift+period
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.

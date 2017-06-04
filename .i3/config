@@ -29,7 +29,10 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite 
+bindsym $mod+Shift+Return exec --no-startup-id termite
+
+# start urxvtc
+bindsym $mod+Return exec --no-startup-id urxvtc
 
 # start inox in web workspace
 bindsym $mod+c exec /usr/bin/inox
@@ -37,7 +40,7 @@ bindsym $mod+c exec /usr/bin/inox
 # start keepass
 bindsym $mod+p exec keepass
 # lock screen
-bindsym $mod+Control+l exec /usr/local/bin/lock
+bindsym $mod+Control+l exec /usr/local/bin/lock -f Sauce-Code-Pro-Nerd-Font-Complete
 
 # Start spotify
 bindsym $mod+Shift+s exec spotify
@@ -46,7 +49,7 @@ bindsym $mod+Shift+s exec spotify
 bindsym $mod+Shift+v exec --no-startup-id nmcli con up id client
 
 # Wal
-bindsym $mod+Shift+w exec --no-startup-id wal -i Pictures/walls -o wal-set -t -q
+bindsym $mod+Shift+w exec --no-startup-id wal -i Pictures/walls -o wal-set -q
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -55,7 +58,7 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec dmenu_run
 
 # use rofi -show run
-bindsym $mod+d exec --no-startup-id rofi -show run 
+bindsym $mod+d exec --no-startup-id rofi -show run
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -63,10 +66,10 @@ bindsym $mod+d exec --no-startup-id rofi -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -75,10 +78,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -87,7 +90,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+semicolon split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -120,14 +123,15 @@ workspace 10 output LVDS
 for_window [class="^Spotify$"] move to workspace $three
 assign [class="^Inox$"] $two
 assign [class="^Firefox$"] $two
-assign [class="^VirtualBox$"] $four
+assign [class="^VirtualBox$"] $five
 
 # workspace variables
 set $one 1:>_.
 set $two 2:Web
 set $three 3:Music
-set $four 4:Misc
-set $five 5:Game
+set $four 4:Chat
+Set $five 5:Misc
+set $six 6:Game
 
 # switch to workspace
 bindsym $mod+1 workspace $one
@@ -135,7 +139,7 @@ bindsym $mod+2 workspace $two
 bindsym $mod+3 workspace $three
 bindsym $mod+4 workspace $four
 bindsym $mod+5 workspace $five
-bindsym $mod+6 workspace 6
+bindsym $mod+6 workspace $six
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
@@ -147,7 +151,7 @@ bindsym $mod+Shift+2 move container to workspace $two
 bindsym $mod+Shift+3 move container to workspace $three
 bindsym $mod+Shift+4 move container to workspace $four
 bindsym $mod+Shift+5 move container to workspace $five
-bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+6 move container to workspace $six
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
@@ -162,26 +166,26 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+	# Pressing left will shrink the window’s width.
+	# Pressing right will grow the window’s width.
+	# Pressing up will shrink the window’s height.
+	# Pressing down will grow the window’s height.
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -189,7 +193,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
-#        status_command i3status -c ~/.i3/i3status.conf
+#	status_command i3status -c ~/.i3/i3status.conf
 #	strip_workspace_numbers yes
 #	colors{
 #		statusline #C9DAD2
@@ -203,17 +207,19 @@ bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ 
 bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Touchpad controls
-bindsym $mod+t exec --no-startup-id /usr/bin/tpo.sh 
+bindsym $mod+t exec --no-startup-id /usr/bin/tpo.sh
 
 # Fix Monitor
 #bindsym $mod+Shift+f exec --no-startup-id ~/.i3/fixmonitor.sh
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Start urxvtd
+exec --no-startup-id urxvtd -q -f -o &
 
 # Start dunst
 exec --no-startup-id dunst &
@@ -242,40 +248,38 @@ set $default_gaps_outer 0
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
-set $mode_gaps Gaps: (o) Outer Menu | Inner: (d) default, (0) zero, (p) inc, (q) dec
-set $mode_gaps_outer Outer Gaps: +|-|d|0 (local), Shift + +|-|d|0 (global)
+set $mode_gaps (d) def, (0) none, (p) i inc, (q) i dec
+set $mode_gaps_outer Outer Gaps: p|q|d|0 (local), Shift + p|q|d|0 (global)
 bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
+	bindsym o      mode "$mode_gaps_outer"
 	bindsym d      gaps inner current set $default_gaps_inner; gaps outer current set $default_gaps_outer
 	bindsym 0      gaps inner current set 0; gaps outer current set 0
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym p  gaps inner current plus 5
-        bindsym q gaps inner current minus 5
+	bindsym p      gaps inner current plus 5
+	bindsym q      gaps inner current minus 5
 
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-        bindsym Shift+d     gaps inner all set $default_gaps_inner
+	bindsym Shift+p gaps inner all plus 5
+	bindsym Shift+q gaps inner all minus 5
+	bindsym Shift+d gaps inner all set $default_gaps_inner; gaps outer all set $default_gaps_outer
+	bindsym Shift+0 gaps inner all set 0; gaps outer all set 0
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-        bindsym d     gaps outer current set $default_gaps_outer
+	bindsym p gaps outer current plus 5
+	bindsym q gaps outer current minus 5
+	bindsym 0     gaps outer current set 0
+	bindsym d     gaps outer current set $default_gaps_outer
 
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-        bindsym Shift+d     gaps outer all set $default_gaps_outer
+	bindsym Shift+p  gaps outer all plus 5
+	bindsym Shift+q gaps outer all minus 5
+	bindsym Shift+0     gaps outer all set 0
+	bindsym Shift+d     gaps outer all set $default_gaps_outer
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 # tearing fix
@@ -295,22 +299,22 @@ set_from_resource $fg i3wm.color5 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
 #
 # Use color from wal
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
+# class		 	border  backgr. text indicator child_border
+client.focused	 	 $bg     $bg     $fg  $bg       $bg
 
 # Grey out unfocused windows
 client.focused_inactive #717475 #717475 #717475 #717475 #717475
-client.unfocused        #717475 #717475 #717475 #717475 #717475
-client.urgent           #717475 #717475 #717475 #717475 #717475
+client.unfocused	#717475 #717475 #717475 #717475 #717475
+client.urgent	   	#717475 #717475 #717475 #717475 #717475
 client.placeholder      #717475 #717475 #717475 #717475 #717475
 
 client.background       $bg
 
 # Not-Wal Colorscheme backup
-# class                 border  backgr. text    indicator child_border
-#client.focused          #3A9892 #3A9892 #C9DAD2 #3A9892   #3A9892
+# class		 	border  backgr. text    indicator child_border
+#client.focused	  	#3A9892 #3A9892 #C9DAD2 #3A9892   #3A9892
 #client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-#client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-#client.urgent           #2f343a #900000 #ffffff #900000   #900000
+#client.unfocused	#333333 #222222 #888888 #292d2e   #222222
+#client.urgent	   	#2f343a #900000 #ffffff #900000   #900000
 #client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 #client.background       #ffffff

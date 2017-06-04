@@ -13,9 +13,10 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/example]
-;monitor = ${env:MONITOR:VGA-0}
+monitor = ${env:MONITOR:VGA-0}
+monitor-fallback = ${env:MONITOR:LVDS}
 width = 100%
-height = 35 
+height = 35
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
@@ -27,7 +28,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 0 
+border-size = 0
 border-color = #000000
 
 padding-left = 0
@@ -36,21 +37,21 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = fixed:pixelsize=10;1
-;font-0 = Source Code Pro:size=10
+;font-0 = fixed:pixelsize=10;1
+font-0 = Source Code Pro:size=10:style=regular:antialias=true
 ;font-0 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-1 = FontAwesome:size=10;
 font-2 = Wuncon Siji:pixelsize=10
 
-modules-left = i3 cpu filesystem
+modules-left = i3 cpu filesystem pacman
 modules-center = mpd spotify
 modules-right = volume vpn wlan eth battery temperature date powermenu
 
 tray-position = right
-tray-padding = 2
+tray-padding = 1
 ;tray-transparent = true
 ;tray-background = #5a00000
-tray-background = ${colors.primary} 
+tray-background = ${colors.primary}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -95,55 +96,50 @@ label-mounted =    %free%
 ;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %free%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-format-padding = 3
+format-padding = 1
 
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background}
-label-focused-underline= #dfdfdf
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+;[module/bspwm]
+;type = internal/bspwm
+;
+;label-focused = %index%
+;label-focused-background = ${colors.background}
+;label-focused-underline= #dfdfdf
+;label-focused-padding = 1
+;
+;label-occupied = %index%
+;label-occupied-padding = 1
+;
+;label-urgent = %index%!
+;label-urgent-background = ${colors.alert}
+;label-urgent-padding = 1
+;
+;label-empty = %index%
+;label-empty-foreground = ${colors.foreground-alt}
+;label-empty-padding = 1
 
 [module/i3]
 type = internal/i3
-;;ws-icon-0 = 2:Web;
-;;ws-icon-1 = 1:>_.;
-;;ws-icon-2 = chat;
-;;ws-icon-3 = code;
-;;ws-icon-4 = music;
-;;ws-icon-default = 
-;;
-;;format = <label-state> <label-mode>
-;;
-;;label-focused = %icon%
-;;label-focused-background = #88000000
-;;label-focused-underline= #ddd
-;;label-focused-padding = 4
-;;
-;;label-occupied = %icon%
-;;label-occupied-padding = 4
-;;
-;;label-urgent = %icon%
-;;label-urgent-padding = 4
-;;
-;;label-empty = %icon%
-;;label-empty-foreground = #44ffffff
-;;label-empty-padding = 4
+ws-icon-1 = 2:Web;
+ws-icon-0 = 1:>_.;
+ws-icon-3 = 4:Chat;
+ws-icon-4 = 5:Misc;
+ws-icon-2 = 3:Music;
+ws-icon-default = 
+;
+;format = <label-state> <label-mode>
+;
+label-focused = %icon%
+;
+label-unfocused = %icon%
+;
+label-occupied = %icon%
+;
+label-urgent = %icon%
+;
+label-visible = %icon%
 
 format = <label-state> <label-mode>
-index-sort = true 
+index-sort = true
 wrapping-scroll = false
 enable-scroll = false
 strip-wsnumbers = true
@@ -151,30 +147,30 @@ strip-wsnumbers = true
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %name%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
+;label-focused = %name%
+label-focused-background = ${colors.background}
+label-focused-underline= #dfdfdf
+label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+;label-unfocused = %name%
+label-unfocused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %name%
+;label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %name%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+;label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
 
 [module/mpd]
 type = internal/mpd
@@ -214,7 +210,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
-format-padding = 2 
+format-padding = 1
 label = %percentage%%
 
 ;[module/memory]
@@ -232,7 +228,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 ;format-connected-underline = #9f78e1
-label-connected = %essid% 
+label-connected = %essid%
 ; %local_ip%
 
 format-disconnected =
@@ -258,7 +254,7 @@ interval = 3.0
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
-format-padding = 3
+format-padding = 1
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -274,7 +270,7 @@ interval = 1.0
 
 ; See "man date" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = %a %b %d, 
+date = %a %b %d,
 
 ; Optional time format
 time = %H:%M
@@ -285,12 +281,12 @@ date-alt = %A, %d %B %Y
 time-alt = %H:%M:%S
 
 label = %date% %time%
-format =    <label>
+format =  <label>
 ;format-background = #3a9892
 format-background = ${colors.primary}
 ;format-background = #88000000
 ;format-foreground = #333
-format-padding = 3
+format-padding = 1
 
 ;interval = 1.0
 ;
@@ -316,8 +312,8 @@ format-muted = <label-muted>
 label-volume = %percentage%
 label-muted =   muted
 label-muted-foreground = #aaa
-format-volume-padding = 3
-format-muted-padding = 3
+format-volume-padding = 1
+format-muted-padding = 1
 
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -357,15 +353,15 @@ full-at = 98
 
 poll-interval = 5
 
-format-charging = <animation-charging>  <label-charging>
-format-discharging = <ramp-capacity>  <label-discharging>
-format-full = <ramp-capacity>  <label-full>
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
 label-charging = %percentage%
 label-discharging = %percentage%
 label-full = %percentage%
-format-charging-padding = 3
-format-discharging-padding = 3
-format-full-padding = 3
+format-charging-padding = 1
+format-discharging-padding = 1
+format-full-padding = 1
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -407,10 +403,10 @@ thermal-zone = 0
 warn-temperature = 70
 
 format = <ramp> <label>
-format-underline = 
+format-underline =
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
-format-padding = 2
+format-padding = 1
 
 label = %temperature%
 label-warn = %temperature%
@@ -424,29 +420,29 @@ ramp-foreground = ${colors.foreground-alt}
 [module/powermenu]
 type = custom/menu
 
-label-open =   
+label-open = 
 ;label-open-background = #dd0000
 ;label-open-foreground = #fff
 label-close = cancel
 ;label-close-background = #dd0000
 ;label-close-foreground = #fff
-label-open-padding = 4 
-label-close-padding = 3 
+label-open-padding = 2
+label-close-padding = 1
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
-menu-0-0-padding = 3
-menu-0-1-padding = 3
+menu-0-0-padding = 1
+menu-0-1-padding = 1
 
-menu-1-0 = reboot?  
+menu-1-0 = reboot?
 menu-1-0-exec = systemctl reboot
-menu-1-0-padding = 3
+menu-1-0-padding = 1
 
-menu-2-0 = power off?  
+menu-2-0 = power off?
 menu-2-0-exec = systemctl poweroff
-menu-2-0-padding = 3
+menu-2-0-padding = 1
 
 ;type = custom/menu
 ;
@@ -481,7 +477,7 @@ exec-if = pgrep -x openvpn
 interval = 5
 ;format-underline = #268bd2
 format-prefix-foreground = #dfdfdf
-format-padding = 2
+format-padding = 1
 
 [settings]
 screenchange-reload = true
@@ -499,5 +495,16 @@ type = custom/script
 exec = ~/.config/polybar/spotify.sh %artist% - %title%
 tail = true
 interval = 2
+
+[module/pacman]
+type = custom/script
+exec = pkg
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+;format-background = #783e57
+;format-underline = #a45476
+format-padding = 1
+interval = 60
+click-left = urxvtc -name "updates" -e zsh -c "upg"
+click-right = urxvtc -name "updates" -e zsh -c "listupg"
 
 ; vim:ft=dosini

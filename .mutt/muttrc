@@ -1,3 +1,5 @@
+# Shamelessly taken from code.fsociety.info
+
 set header_cache = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/bodies"
 set certificate_file = "~/.mutt/certificates"
