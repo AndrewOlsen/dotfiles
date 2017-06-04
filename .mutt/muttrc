@@ -1,0 +1,71 @@
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+set move = no
+set charset = "utf-8"
+set editor = "/usr/bin/vim +/^$"
+set check_new = yes
+set spoolfile       = "+gmail/INBOX"  # GMail is default inbox
+set mailcap_path 	= ~/.mutt/mailcap
+
+set date_format     = "%d/%m/%y at %I:%M%P"
+set index_format    = "%3C [%Z] %D %-15.15F %s"
+
+set realname        = "Andy Olsen"
+set envelope_from
+set edit_headers
+set fast_reply
+set sendmail_wait   = -1
+set askcc
+set fcc_attach
+unset mime_forward
+set forward_format  = "Fwd: %s"
+set forward_decode
+set attribution     = "On %d, %n wrote:"
+set reply_to
+set reverse_name
+set include
+set forward_quote
+set ispell = "aspell -e -c"
+
+set sort              = reverse-last-date-received
+set uncollapse_jump
+set sort_re
+set reply_regexp      = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+set pager_stop
+set menu_scroll
+set smart_wrap
+set tilde
+unset markers
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+
+unignore from: to: cc: date: subject:
+hdr_order from: to: cc: date: subject:
+
+mailboxes +gmail/INBOX +gmail/INBOX/Sent +gmail/SPAM +gmail/TRASH
+mailboxes +school/INBOX +school/INBOX/Sent +school/SPAM +school/TRASH
+
+source ~/.mutt/gmail.muttrc
+source ~/.mutt/colors
+
+folder-hook school/* source ~/.mutt/school.muttrc
+
+# bindings
+bind pager q           exit
+bind pager /           search
+bind pager <up>        previous-line
+bind pager <down>      next-line
+bind pager k           previous-line
+bind pager j           next-line
+bind pager gg          top
+bind pager G           bottom
+bind index gg          first-entry
+bind index G           last-entry
+bind pager K           previous-undeleted
+bind pager J           next-undeleted
+bind index K           previous-unread
+bind index J           next-unread
+bind index,pager R     group-reply
