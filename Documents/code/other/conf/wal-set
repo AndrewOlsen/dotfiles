@@ -8,12 +8,12 @@ reload_poly(){
 reload_dunst() {
     pkill dunst && \
         dunst \
-            -lb "$color15" \
-            -nb "$color15" \
-            -cb "$color15" \
-            -lf "$color0"  \
-            -bf "$color0"  \
-            -cf "$color9" &
+            -lb "#000000" \
+            -nb "#000000" \
+            -cb "#000000" \
+            -lf "$color2"  \
+            -bf "$color2"  \
+            -cf "#e2465b" &
 }
 
 main() {

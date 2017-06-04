@@ -1,3 +1,5 @@
+clear
+toilet --metal -f sblood -t Jiggling...
 while true
 do
 	xte 'mousermove 5 5'
