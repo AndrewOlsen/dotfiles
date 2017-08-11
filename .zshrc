@@ -3,7 +3,7 @@
 # terminal for i3
   export TERMINAL=/usr/bin/urxvtc
   export EDITOR=/usr/bin/vim
-  export BROWSER="/usr/bin/inox"
+  export BROWSER=/usr/bin/qutebrowser
 # export PATH="/usr/local/bin:/usr/bin/core_perl:$PATH"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -99,6 +99,8 @@ alias clip="xclip -selection clipboard"
 alias work="cd ~/Documents/work/"
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 alias pu="pacaur -Syu"
+alias qutebrowser="qutebrowser --backend webengine"
+alias rs="source ./venv/bin/activate; rainbowstream -iot; deactivate"
 
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh

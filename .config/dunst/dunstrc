@@ -11,7 +11,7 @@
     # <http://developer.gnome.org/pango/stable/PangoMarkupFormat.html>.
     # If markup is not allowed, those tags will be stripped out of the
     # message.
-    allow_markup = yes
+    markup = yes
 
     # Treat incoming notifications as plain text
     plain_text = no
@@ -154,7 +154,6 @@
     # Paths to default icons.
     icon_folders = /usr/share/icons/Arc/status/16/:/usr/share/icons/Arc/devices/16/
 
-[frame]
     width = 0
 
 [shortcuts]

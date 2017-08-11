@@ -1,12 +1,19 @@
-! Adobe Source Code Pro
-URxvt*font: xft:SauceCodePro Nerd Font:size=12,xft:Noto Emoji:style=Regular:antialias=false
+! Make workspaces urgent. Mostly for weechat.
+URxvt.urgentOnBell: True
+
+! Adobe Source Code Pro, emoji
+URxvt*font: \
+	xft:SauceCodePro Nerd Font:size=12,\
+	xft:Noto Color Emoji:style=Regular:antialias=false,\
+	xft:Liberation Mono:size=12\
 URxvt.letterSpace: 1
 
+! Better font stuff
 Xft.autohint: false
 Xft.dpi: 96
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
-Xft.hinting: false
+Xft.hinting: true
 Xft.antialias: true
 Xft.rgba: rgb
 
@@ -14,18 +21,15 @@ Xft.rgba: rgb
 !URxvt*font: xft:xos4 Terminus:size=14
 !URxvt.letterSpace: 0
 
-! inox
-URxvt*perl-ext-common: default,matcher,clipboard,keyboard-select,url-select
-URxvt*url-launcher:    /usr/bin/inox --incognito
-URxvt*matcher.button:  1
+! Url stuff
+URxvt.keysym.Meta-semicolon: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/qutebrowser
+URxvt.url-select.underline: true
+URxvt*perl-ext-common: default,clipboard,keyboard-select,url-select
+URxvt.url-select.button: 1
 
 URxvt*internalBorder: 20
 URxvt*cursorBlink: 1
-
-! Url stuff
-URxvt.keysym.Meta-semicolon: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/inox --incognito
-URxvt.url-select.underline: true
 
 ! Scrollbar
 URxvt*scrollBar: off
@@ -37,9 +41,37 @@ URxvt.keysym.Control-Shift-C: perl:clipboard:copy
 URxvt.keysym.Control-Shift-V: perl:clipboard:paste
 URxvt.iso14755: False
 
-! Rofi
+! Rofi 
+
 !rofi.color-enabled: true
 !rofi.color-window: #393939, #393939, #3a9892
 !rofi.color-normal: #393939, #ffffff, #393939, #3a9892, #ffffff
 !rofi.color-active: #393939, #3a9892, #393939, #3a9892, #393939
 !rofi.color-urgent: #393939, #f3843d, #393939, #3a9892, #ffc39c
+
+rofi.fullscreen:                     false
+!rofi.padding:                        200
+rofi.font:                           Source Code Pro 14
+rofi.location:                       0
+rofi.fixed-num-lines:                true
+rofi.lines:			10
+rofi.terminal:                       urxvtc -e
+
+! "Use levenshtein sorting" Set from: Default
+rofi.levenshtein-sort:               true
+rofi.case-sensitive:                 false
+! "Set the matching algorithm. (normal, regex, glob, fuzzy)" Set from: Default
+rofi.matching:                       fuzzy
+! rofi.line-margin:                    2
+! rofi.line-padding:                   1
+rofi.separator-style:                none
+rofi.hide-scrollbar:                 true
+! "Scrolling method. (0: Page, 1: Centered)" Set from: Default
+rofi.scroll-method:                  1
+! hotkeys
+! remove conflicting shortcuts
+rofi.kb-accept-entry:                Return
+rofi.kb-remove-to-eol:
+rofi.kb-row-up:                      Up,Control+k
+rofi.kb-row-down: Down,Control+j
+rofi.disable-history:		false
