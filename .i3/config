@@ -127,6 +127,7 @@ workspace 10 output LVDS
 
 # Assign programs to wkspc
 for_window [class="^Spotify$"] move to workspace $three
+for_window [class="^URxvt$" instance="jiggle"] floating enable
 assign [class="^Inox$"] $two
 assign [class="^Firefox$"] $two
 assign [class="^qutebrowser$"] $two
