@@ -1,5 +1,0 @@
-# Used to push notifications to phone
-curl -s -F "token=" \
--F "user=" \
--F "title=Arch" \
--F "message=$1" https://api.pushover.net/1/messages.json

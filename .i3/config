@@ -46,7 +46,7 @@ bindsym $mod+z exec --no-startup-id zathura
 # start keepass
 bindsym $mod+p exec keepassxc
 # lock screen
-bindsym $mod+Control+l exec /usr/local/bin/lock -f Sauce-Code-Pro-Nerd-Font-Complete
+bindsym $mod+Control+l exec i3lock-fancy -f Sauce-Code-Pro-Nerd-Font-Complete
 
 # Start spotify
 bindsym $mod+Shift+s exec spotify

@@ -43,9 +43,9 @@ font-0 = Source Code Pro:size=10:style=regular:antialias=true
 font-1 = FontAwesome:size=10;
 font-2 = Wuncon Siji:pixelsize=10
 
-modules-left = i3 cpu filesystem pacman
-modules-center = mpd spotify
-modules-right = volume vpn wlan eth battery temperature date powermenu
+modules-left = i3 wlan eth temperature
+modules-center = date
+modules-right = mpd spotify volume vpn battery powermenu
 
 tray-position = right
 tray-padding = 1
@@ -53,7 +53,6 @@ tray-padding = 1
 ;tray-background = #5a00000
 tray-background = ${colors.primary}
 
-;wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true
@@ -70,52 +69,17 @@ bottom = false
 type = internal/xwindow
 label = %title:0:30:...%
 
-;[module/xkeyboard]
-;type = internal/xkeyboard
-;blacklist-0 = num lock
-
-;format-prefix = " "
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-prefix-underline = ${colors.secondary}
-
-;label-layout = %layout%
-;label-layout-underline = ${colors.secondary}
-
-;label-indicator-padding = 2
-;label-indicator-margin = 1
-;label-indicator-background = ${colors.secondary}
-;label-indicator-underline = ${colors.secondary}
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted =    %free%
-;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %free%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-format-padding = 1
-
-;[module/bspwm]
-;type = internal/bspwm
+;[module/filesystem]
+;type = internal/fs
+;interval = 25
 ;
-;label-focused = %index%
-;label-focused-background = ${colors.background}
-;label-focused-underline= #dfdfdf
-;label-focused-padding = 1
+;mount-0 = /
 ;
-;label-occupied = %index%
-;label-occupied-padding = 1
-;
-;label-urgent = %index%!
-;label-urgent-background = ${colors.alert}
-;label-urgent-padding = 1
-;
-;label-empty = %index%
-;label-empty-foreground = ${colors.foreground-alt}
-;label-empty-padding = 1
+;label-mounted =    %free%
+;;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %free%
+;label-unmounted = %mountpoint% not mounted
+;label-unmounted-foreground = ${colors.foreground-alt}
+;format-padding = 1
 
 [module/i3]
 type = internal/i3
@@ -139,6 +103,7 @@ label-urgent = %icon%
 label-visible = %icon%
 
 format = <label-state> <label-mode>
+format-suffix = "| "
 index-sort = true
 wrapping-scroll = false
 enable-scroll = false
@@ -174,7 +139,9 @@ label-urgent-padding = 1
 
 [module/mpd]
 type = internal/mpd
+interval = 2
 ;format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+label-song =  %artist% - %title% |
 format-online = <label-song>
 icon-prev = 
 icon-stop = 
@@ -182,36 +149,19 @@ icon-play = 
 icon-pause = 
 icon-next = 
 
-[module/xbacklight]
-type = internal/xbacklight
+;[module/backlight-acpi]
+;inherit = module/xbacklight
+;type = internal/backlight
+;card = intel_backlight
 
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #f90000
-format-padding = 1
-label = %percentage%%
+;[module/cpu]
+;type = internal/cpu
+;interval = 2
+;format-prefix = " "
+;format-prefix-foreground = ${colors.foreground-alt}
+;;format-underline = #f90000
+;format-padding = 1
+;label = %percentage%%
 
 ;[module/memory]
 ;type = internal/memory
@@ -224,7 +174,7 @@ label = %percentage%%
 [module/wlan]
 type = internal/network
 interface = wlo1
-interval = 3.0
+interval = 60.0
 
 format-connected = <ramp-signal> <label-connected>
 ;format-connected-underline = #9f78e1
@@ -248,7 +198,7 @@ format-padding = 3
 [module/eth]
 type = internal/network
 interface = eno1
-interval = 3.0
+interval = 180.0
 
 ;format-connected-underline = #55aa55
 format-connected-prefix = " "
@@ -270,20 +220,21 @@ interval = 1.0
 
 ; See "man date" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = %a %b %d,
+date = %a %b %d -
 
 ; Optional time format
 time = %H:%M
 
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
-date-alt = %A, %d %B %Y
+date-alt = %A, %d %B %Y -
 time-alt = %H:%M:%S
 
 label = %date% %time%
-format =  <label>
+;format =  <label>
+format = <label>
 ;format-background = #3a9892
-format-background = ${colors.primary}
+;format-background = ${colors.primary}
 ;format-background = #88000000
 ;format-foreground = #333
 format-padding = 1
@@ -351,7 +302,7 @@ battery = BAT0
 adapter = ACAD
 full-at = 98
 
-poll-interval = 5
+poll-interval = 60
 
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
@@ -402,9 +353,11 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 70
 
-format = <ramp> <label>
+;format = <ramp> <label>
+format =
 format-underline =
 format-warn = <ramp> <label-warn>
+format-warn-prefix = " |"
 format-warn-underline = ${self.format-underline}
 format-padding = 1
 
@@ -474,7 +427,7 @@ menu-2-0-padding = 1
 type = custom/script
 exec = echo 
 exec-if = pgrep -x openvpn
-interval = 5
+interval = 60
 ;format-underline = #268bd2
 format-prefix-foreground = #dfdfdf
 format-padding = 1
@@ -492,19 +445,21 @@ margin-bottom = 5
 
 [module/spotify]
 type = custom/script
+format-prefix = " "
+format-suffix = " |"
 exec = ~/.config/polybar/spotify.sh %artist% - %title%
 tail = true
 interval = 2
 
-[module/pacman]
-type = custom/script
-exec = pkg
-exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
-;format-background = #783e57
-;format-underline = #a45476
-format-padding = 1
-interval = 60
-click-left = urxvtc -name "updates" -e zsh -c "upg"
-click-right = urxvtc -name "updates" -e zsh -c "listupg"
+;[module/pacman]
+;type = custom/script
+;exec = pkg
+;exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+;;format-background = #783e57
+;;format-underline = #a45476
+;format-padding = 1
+;interval = 60
+;click-left = urxvtc -name "updates" -e zsh -c "upg"
+;click-right = urxvtc -name "updates" -e zsh -c "listupg"
 
 ; vim:ft=dosini
