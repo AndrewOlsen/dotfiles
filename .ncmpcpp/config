@@ -276,7 +276,7 @@ browser_playlist_prefix = "$4 ♥ $3 "
 ##   not available.
 ##
 #
-song_columns_list_format = "(3)[]{}(40)[blue]{a} (25f)[white]{t|f} "
+song_columns_list_format = "(3)[]{}(20)[]{a} (50)[white]{t|f:Title} (4f)[magenta]{l}"
 #
 ##### various settings #####
 #
@@ -321,7 +321,7 @@ centered_cursor = yes
 ## Note: You can specify third character which will
 ## be used to build 'empty' part of progressbar.
 ##
-progressbar_look = "__ " 
+progressbar_look = ___ 
 #
 ## Available values: database, playlist.
 ##

@@ -44,7 +44,7 @@ bindsym $mod+q exec --no-startup-id qutebrowser --backend webengine
 bindsym $mod+z exec --no-startup-id zathura
 
 # start keepass
-bindsym $mod+p exec passmenu
+bindsym $mod+p exec keepassxc
 # lock screen
 bindsym $mod+Control+l exec i3lock-fancy -f Sauce-Code-Pro-Nerd-Font-Complete
 
@@ -128,7 +128,6 @@ workspace 10 output LVDS
 # Assign programs to wkspc
 for_window [class="^Spotify$"] move to workspace $three
 for_window [class="^URxvt$" instance="jiggle"] floating enable
-for_window [class="^Pinentry$"] floating enable
 assign [class="^Inox$"] $two
 assign [class="^Firefox$"] $two
 assign [class="^qutebrowser$"] $two

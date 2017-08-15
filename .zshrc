@@ -100,12 +100,13 @@ alias work="cd ~/Documents/work/"
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 alias pu="pacaur -Syu"
 alias qutebrowser="qutebrowser --backend webengine"
-alias rainbowstream="workon rs; rainbowstream -iot; deactivate"
+alias rs="source ./venv/bin/activate; rainbowstream -iot; deactivate"
+alias jm="urxvt -name jiggle --geometry 75x7 -e jiggle.sh"
 
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
 source "$HOME/.cache/wal/colors.sh"
-(wal -r -q &)
+(wal -r -t -q &)
 function mm() {
     mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$@"
 }

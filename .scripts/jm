@@ -1,2 +1,0 @@
-#!/bin/env bash
-urxvtc -name jiggle --geometry 75x7 -e jiggle.sh
