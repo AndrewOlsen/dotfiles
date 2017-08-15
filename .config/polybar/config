@@ -47,11 +47,11 @@ modules-left = i3 wlan eth temperature
 modules-center = date
 modules-right = mpd spotify volume vpn battery powermenu
 
-tray-position = right
-tray-padding = 1
+;tray-position = right
+;tray-padding = 1
 ;tray-transparent = true
 ;tray-background = #5a00000
-tray-background = ${colors.primary}
+;tray-background = ${colors.primary}
 
 ;wm-restack = i3
 
@@ -357,7 +357,7 @@ warn-temperature = 70
 format =
 format-underline =
 format-warn = <ramp> <label-warn>
-format-warn-prefix = " |"
+format-warn-prefix = " | "
 format-warn-underline = ${self.format-underline}
 format-padding = 1
 
