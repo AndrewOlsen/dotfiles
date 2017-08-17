@@ -276,7 +276,7 @@ browser_playlist_prefix = "$4 ♥ $3 "
 ##   not available.
 ##
 #
-song_columns_list_format = "(3)[]{}(40)[blue]{a} (25f)[white]{t|f} "
+song_columns_list_format = "(3)[]{}(25)[blue]{a} (25)[white]{t|f} (4f)[red]{l}"
 #
 ##### various settings #####
 #
@@ -343,9 +343,9 @@ progressbar_look = "__ "
 #
 #default_tag_editor_pattern = %n - %t
 #
-header_visibility = no
+header_visibility = no 
 #
-statusbar_visibility = no
+statusbar_visibility = no 
 #
 titles_visibility = no 
 #

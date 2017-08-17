@@ -43,7 +43,7 @@ bindsym $mod+q exec --no-startup-id qutebrowser --backend webengine
 # start zathura
 bindsym $mod+z exec --no-startup-id zathura
 
-# start keepass
+# start passmenu
 bindsym $mod+p exec passmenu
 # lock screen
 bindsym $mod+Control+l exec i3lock-fancy -f Sauce-Code-Pro-Nerd-Font-Complete

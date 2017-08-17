@@ -1,3 +1,6 @@
+"" Get list of plugin help files
+"" :help local-additions
+
 set nocompatible
 "" Filetype synatax
 filetype plugin on
@@ -16,6 +19,8 @@ let g:vim_markdown_folding_disabled = 1
 "" Plugin installer
 call plug#begin('~/.vim/bundle')
 "" Vim keybinds
+""   toggle line numb 'con'
+""   toggle relative numb 'cor'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
 "" PEP 8 Python check
@@ -23,6 +28,7 @@ Plug 'nvie/vim-flake8'
 "" Vim Unix Commands - move, sudowrite etc
 Plug 'tpope/vim-eunuch'
 "" Change surrounding chars '' -> ""
+""   cs'"
 Plug 'tpope/vim-surround'
 "" Undo tree menu
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}

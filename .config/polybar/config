@@ -37,9 +37,7 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-;font-0 = fixed:pixelsize=10;1
 font-0 = Source Code Pro:size=10:style=regular:antialias=true
-;font-0 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-1 = FontAwesome:size=10;
 font-2 = Wuncon Siji:pixelsize=10
 
@@ -52,16 +50,6 @@ modules-right = mpd spotify volume vpn battery powermenu
 ;tray-transparent = true
 ;tray-background = #5a00000
 ;tray-background = ${colors.primary}
-
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 bottom = false
 
@@ -149,11 +137,6 @@ icon-play = 
 icon-pause = 
 icon-next = 
 
-;[module/backlight-acpi]
-;inherit = module/xbacklight
-;type = internal/backlight
-;card = intel_backlight
-
 ;[module/cpu]
 ;type = internal/cpu
 ;interval = 2
@@ -239,8 +222,6 @@ format = <label>
 ;format-foreground = #333
 format-padding = 1
 
-;interval = 1.0
-;
 ;date = %a %b %d,
 ;date-alt =  %A, %d %B %Y
 ;
@@ -397,40 +378,14 @@ menu-2-0 = power off?
 menu-2-0-exec = systemctl poweroff
 menu-2-0-padding = 1
 
-;type = custom/menu
-;
-;format-spacing = 1
-;
-;label-open = 
-;label-open-foreground = ${colors.secondary}
-;label-close =  cancel
-;label-close-foreground = ${colors.secondary}
-;label-separator = |
-;label-separator-foreground = ${colors.foreground-alt}
-;
-;menu-0-0 = reboot
-;menu-0-0-exec = menu-open-1
-;menu-0-1 = power off
-;menu-0-1-exec = menu-open-2
-;
-;menu-1-0 = cancel
-;menu-1-0-exec = menu-open-0
-;menu-1-1 = reboot
-;menu-1-1-exec = sudo reboot
-;
-;menu-2-0 = power off
-;menu-2-0-exec = sudo poweroff
-;menu-2-1 = cancel
-;menu-2-1-exec = menu-open-0
-
-[module/vpn]
-type = custom/script
-exec = echo 
-exec-if = pgrep -x openvpn
-interval = 60
-;format-underline = #268bd2
-format-prefix-foreground = #dfdfdf
-format-padding = 1
+;[module/vpn]
+;type = custom/script
+;exec = echo 
+;exec-if = pgrep -x openvpn
+;interval = 60
+;;format-underline = #268bd2
+;format-prefix-foreground = #dfdfdf
+;format-padding = 1
 
 [settings]
 screenchange-reload = true
@@ -449,6 +404,7 @@ format-prefix = " "
 format-suffix = " |"
 exec = ~/.config/polybar/spotify.sh %artist% - %title%
 tail = true
+click-left = playerctl play-pause
 interval = 2
 
 ;[module/pacman]
