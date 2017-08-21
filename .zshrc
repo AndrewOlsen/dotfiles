@@ -51,7 +51,11 @@ source /usr/bin/virtualenvwrapper.sh
 source "$HOME/.cache/wal/colors.sh"
 (wal -r -q &)
 
-# Search for youtube music
+# Search for youtube music and give info to polybar
 function mm() {
-    mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$@"
+	youtube-dl --skip-download --get-title --get-id ytsearch:"$@" > ~/.config/polybar/mpv-info
+	title=`head -n 1 ~/.config/polybar/mpv-info`
+	id=`tail -n 1 ~/.config/polybar/mpv-info`
+	echo $title > ~/.config/polybar/mpv-title
+	mpv --no-video --ytdl-format=bestaudio ytdl://$id
 }
