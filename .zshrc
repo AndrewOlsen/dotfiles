@@ -58,4 +58,5 @@ function mm() {
 	id=`tail -n 1 ~/.config/polybar/mpv-info`
 	echo $title > ~/.config/polybar/mpv-title
 	mpv --no-video --ytdl-format=bestaudio ytdl://$id
+	rm ~/.config/polybar/mpv-title
 }
