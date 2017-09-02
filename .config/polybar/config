@@ -71,31 +71,31 @@ label = %title:0:30:...%
 
 [module/i3]
 type = internal/i3
-ws-icon-1 = 2:Web;
-ws-icon-0 = 1:>_.;
-ws-icon-3 = 4:Chat;
-ws-icon-4 = 5:Misc;
-ws-icon-2 = 3:Music;
-ws-icon-default = 
+#ws-icon-0 = 1:>_.;
+#ws-icon-1 = 2:Web;
+#ws-icon-2 = 3:Music;
+#ws-icon-3 = 4:Chat;
+#ws-icon-4 = 5:Misc;
+#ws-icon-default = 
 ;
 ;format = <label-state> <label-mode>
 ;
-label-focused = %icon%
+;label-focused = %icon%
 ;
-label-unfocused = %icon%
+;label-unfocused = %icon%
 ;
-label-occupied = %icon%
+;label-occupied = %icon%
 ;
-label-urgent = %icon%
+;label-urgent = %icon%
 ;
-label-visible = %icon%
+;label-visible = %icon%
 
 format = <label-state> <label-mode>
 format-suffix = "| "
 index-sort = true
 wrapping-scroll = false
 enable-scroll = false
-strip-wsnumbers = true
+strip-wsnumbers = false
 
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true

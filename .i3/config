@@ -128,19 +128,29 @@ workspace 10 output LVDS
 # Assign programs to wkspc
 for_window [class="^Spotify$"] move to workspace $three
 for_window [class="^URxvt$" instance="jiggle"] floating enable
+ # gpg pass entry
 for_window [class="^Pinentry$"] floating enable
+for_window [class="^feh$"] floating enable
+for_window [class="^mpv$"] floating enable
 assign [class="^Inox$"] $two
 assign [class="^Firefox$"] $two
 assign [class="^qutebrowser$"] $two
 assign [class="^VirtualBox$"] $five
 
 # workspace variables
-set $one 1:>_.
-set $two 2:Web
-set $three 3:Music
-set $four 4:Chat
-Set $five 5:Misc
-set $six 6:Game
+#set $one 1:>_.
+#set $two 2:Web
+#set $three 3:Music
+#set $four 4:Chat
+#set $five 5:Misc
+#set $six 6:Game
+
+set $one 1
+set $two 2
+set $three 3
+set $four 4
+set $five 5
+set $six 6
 
 # switch to workspace
 bindsym $mod+1 workspace $one
@@ -171,7 +181,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -f 'pango: Source Code Pro 8' -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

@@ -3,7 +3,7 @@
 auto-reload yes
 browser "[[ -n \"$( pgrep QtWebEngineProc )\"  ]] && qutebrowser %u || w3m %u"
 feed-sort-order title-dec
-notify-format "newsbeuter: %n unread articles within %f unread feeds"
+notify-format "newsbeuter:\n%n unread articles within %f unread feeds"
 notify-program notify-send
 html-renderer "w3m -dump -T text/html"
 player "mpv"
