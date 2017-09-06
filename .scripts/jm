@@ -1,3 +1,2 @@
 #!/bin/env bash
-# runs jiggle in floating window same size as text
-urxvtc -name jiggle --geometry 75x7 -e jiggle.sh
+urxvtc -name jiggle --geometry 1x1 -e jiggle.py
