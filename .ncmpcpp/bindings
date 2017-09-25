@@ -148,12 +148,37 @@
 ##
 ##  - set_volume
 ##
-def_key "k"
-  scroll_up
 #
+
 def_key "j"
   scroll_down
-#
+
+def_key "J"
+  page_down
+
+def_key "k"
+  scroll_up
+
+def_key "K"
+  page_up
+
+def_key "l"
+  next_column
+
+def_key "h"
+  previous_column
+
+def_key "g"
+  move_home
+
+def_key "G"
+  move_end
+
+def_key "n"
+  next_found_item
+
+def_key "N"
+  previous_found_item
 #def_key "mouse"
 #  mouse_event
 #

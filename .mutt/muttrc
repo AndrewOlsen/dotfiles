@@ -49,11 +49,13 @@ hdr_order from: to: cc: date: subject:
 
 mailboxes +gmail/INBOX +gmail/INBOX/Sent +gmail/SPAM +gmail/TRASH
 mailboxes +school/INBOX +school/INBOX/Sent +school/SPAM +school/TRASH
+mailboxes +hotmail/INBOX +hotmail/SENT +hotmail/SPAM +hotmail/TRASH
 
 source ~/.mutt/gmail.muttrc
 source ~/.mutt/colors
 
 folder-hook school/* source ~/.mutt/school.muttrc
+folder-hook hotmail/* source  ~/.mutt/hotmail.muttrc
 
 # bindings
 bind pager q           exit
