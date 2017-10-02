@@ -1,9 +1,13 @@
+## i3
 ![desktop](http://0x0.st/nPL.png)
+
+## herbstluftwm
+![herbst](http://0x0.st/Fcw.png)
 
 ## Programs
 
 ### Environment
-* i3
+* herbstluftwm / i3
 * urxvtd
 * termite (as a backup)
 * zsh
