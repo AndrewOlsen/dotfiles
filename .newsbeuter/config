@@ -1,7 +1,7 @@
 # From code.fsociety.info
 
 auto-reload yes
-browser "[[ -n \"$( pgrep QtWebEngineProc )\"  ]] && qutebrowser %u || w3m %u"
+browser "[[ -n \"$( pgrep qutebrowser)\"  ]] && qutebrowser %u || w3m %u"
 feed-sort-order title-dec
 notify-format "newsbeuter:\n%n unread articles within %f unread feeds"
 notify-program notify-send
@@ -20,3 +20,8 @@ bind-key K prev article
 ignore-article "*" "title =~ \"Sponsor\""
 ignore-article "*" "title =~ \"Advertisement\""
 ignore-mode "display"
+
+
+color listfocus yellow black bold
+color listfocus_unread yellow black bold
+color info yellow black

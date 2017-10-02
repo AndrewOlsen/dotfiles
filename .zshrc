@@ -7,7 +7,7 @@
   export BROWSER=/usr/bin/qutebrowser
 
 # Set name of the theme to load.
-ZSH_THEME="classyTouch"
+ZSH_THEME="xero"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(git archlinux sudo)
@@ -34,6 +34,9 @@ alias vimi3="vim ~/.i3/config"
 alias vimpoly="vim ~/.config/polybar/config"
 alias vimzsh="vim ~/.zshrc"
 alias vimx="vim ~/.Xresources"
+alias vimherb="vim ~/.config/herbstluftwm/autostart"
+alias minvim='vim -c "setlocal nonumber | setlocal norelativenumber | AirlineToggle | set noshowmode | set laststatus=0 | set noshowcmd | highlight EndOfBuffer ctermfg=black ctermbg=black"'
+alias hc="herbstclient"
 
 # Command alias
 alias t="todo.sh"

@@ -2,7 +2,7 @@
 source "${HOME}/.cache/wal/colors.sh"
 
 reload_poly(){
-    pkill polybar && polybar example &
+    pkill polybar && polybar i3 &
 }
 
 reload_dunst() {
@@ -17,7 +17,6 @@ reload_dunst() {
 }
 
 main() {
-    reload_poly &
     reload_dunst &
 }
 

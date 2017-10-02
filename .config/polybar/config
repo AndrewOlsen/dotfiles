@@ -12,7 +12,48 @@ primary = ${xrdb:color4:#222}
 secondary = #e60053
 alert = #bd2c40
 
-[bar/example]
+[bar/herb]
+monitor = ${env:MONITOR:VGA-0}
+monitor-fallback = ${env:MONITOR:LVDS}
+width = 100%
+height = 35
+;offset-x = 1%
+;offset-y = 1%
+radius = 0.0
+;fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Source Code Pro:size=10:style=regular:antialias=true
+font-1 = FontAwesome:size=10;
+font-2 = Wuncon Siji:pixelsize=10
+
+modules-left = ewmh wlan eth temperature
+modules-center = date
+modules-right = mpd spotify mpv volume battery powermenu
+
+;tray-position = right
+;tray-padding = 1
+;tray-transparent = true
+;tray-background = #5a00000
+;tray-background = ${colors.primary}
+
+bottom = false
+
+[bar/i3]
 monitor = ${env:MONITOR:VGA-0}
 monitor-fallback = ${env:MONITOR:LVDS}
 width = 100%
@@ -53,9 +94,9 @@ modules-right = mpd spotify mpv volume battery powermenu
 
 bottom = false
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
+;[module/xwindow]
+;type = internal/xwindow
+;label = %title:0:30:...%
 
 ;[module/filesystem]
 ;type = internal/fs
@@ -68,6 +109,68 @@ label = %title:0:30:...%
 ;label-unmounted = %mountpoint% not mounted
 ;label-unmounted-foreground = ${colors.foreground-alt}
 ;format-padding = 1
+
+[module/ewmh]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = true
+; Available tags:
+;   <label-monitor>
+;   <label-state> - gets replaced with <label-(active|urgent|occupied|empty)>
+; Default: <label-state>
+format = <label-state>
+format-suffix = " |"
+format-padding = 1
+label-padding = 1
+
+; Available tokens:
+;   %name%
+; Default: %name%
+;label-monitor = %name%
+;label-monitor-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-active = %icon% %name% %icon%
+label-active-foreground = ${colors.foreground}
+label-active-background = ${colors.background}
+label-active-underline = #dfdfdf
+lable-active-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-occupied = %name%
+label-occupied-foreground = ${colors.foreground}
+label-occupied-background = ${colors.background}
+label-occupied-underline =
+label-occupied-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = %name%
+label-urgent-foreground = ${colors.foreground}
+label-urgent-background = ${colors.alert}
+label-urgent-underline = 
+label-urgent-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-empty = %name%
+label-empty-foreground = 
+label-empty-padding = 1
 
 [module/i3]
 type = internal/i3

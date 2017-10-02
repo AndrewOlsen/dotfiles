@@ -247,7 +247,7 @@ exec --no-startup-id urxvtd -q -f -o &
 exec --no-startup-id dunst &
 
 # Polybar
-exec_always --no-startup-id killall polybar; polybar example
+exec_always --no-startup-id killall polybar; polybar i3
 
 # start compton
 exec --no-startup-id compton &
@@ -261,7 +261,7 @@ bindsym $mod+minus scratchpad show
 # Start up
 exec --no-startup-id synclient TouchPadOff=1
 #exec --no-startup-id xautolock -time 15 -detectsleep -locker /usr/local/bin/lock
-exec redshift &
+#exec redshift &
 exec --no-startup-id xset -b
 
 # gaps
