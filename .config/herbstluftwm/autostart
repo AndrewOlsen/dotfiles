@@ -49,7 +49,9 @@ hc keybind $Mod-Shift-l     shift right
 # splitting frames
 # create an empty frame at the specified direction
 hc keybind $Mod-u       split   bottom  0.5
+hc keybind $Mod-Shift-u split   top     0.5
 hc keybind $Mod-o       split   right   0.5
+hc keybind $Mod-Shift-o split   left    0.5
 # let the current frame explode into subframes
 hc keybind $Mod-Control-space split explode
 
@@ -165,7 +167,7 @@ hc detect_monitors
 hc pad 0 35 0 0
 
 hc keybind $Mod-d spawn rofi -show run
-hc keybind $Mod-p spawn passmenu
+hc keybind $Mod-p spawn passmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b
 hc keybind $Mod-q spawn qutebrowser
 hc keybind $Mod-Shift-m spawn wal -i /home/andy/Pictures/walls -q -o wal-set
 hc keybind $Mod-Shift-s spawn spotify
@@ -201,3 +203,4 @@ dunst &
 synclient TouchpadOff=1
 killall polybar
 polybar herb &
+systemctl start --user redshift.service

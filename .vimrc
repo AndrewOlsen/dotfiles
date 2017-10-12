@@ -1,7 +1,11 @@
 "" Get list of plugin help files
 "" :help local-additions
 
+"" View help on current word
+"" :help <C-r><C-w>
+
 set nocompatible
+
 "" Filetype synatax
 filetype plugin on
 syntax on
@@ -18,34 +22,51 @@ let g:vim_markdown_folding_disabled = 1
 
 "" Plugin installer
 call plug#begin('~/.vim/bundle')
+
 "" Vim keybinds
-""   toggle line numb 'con'
-""   toggle relative numb 'cor'
+""   toggle line number 'con'
+""   toggle relative number 'cor'
+""   toggle spelling 'cos'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
+
 "" PEP 8 Python check
 Plug 'nvie/vim-flake8'
-"" Vim Unix Commands - move, sudowrite etc
+
+"" Vim Unix Commands 
+""   move, sudowrite, chmod, mkdir, rename, find
 Plug 'tpope/vim-eunuch'
-"" Change surrounding chars '' -> ""
-""   cs'"
+
+"" Edit surrounding characters""   
+""    change surrounding => cs'"
+""    Delete surrounding => ds'"
+""    'you' surround => ysiw"
 Plug 'tpope/vim-surround'
+
 "" Undo tree menu
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
+
 "" Plugin stuff
 Plug 'shougo/vimproc', {'do': 'make'}
+
 "" Matching parantheses, quotes etc
 Plug 'Raimondi/delimitMate'
+
 "" Close statements if, for etc
 Plug 'tpope/vim-endwise'
+
 "" Error checking
 Plug 'w0rp/ale'
+
 "" Vim statusbar
 Plug 'vim-airline/vim-airline'
+
 "" Vim airline themes
 Plug 'vim-airline/vim-airline-themes'
+
 "" Completion Engine
 Plug 'Shougo/neocomplete.vim'
+
 "" Better search
 Plug 'haya14busa/incsearch.vim'
   map /  <Plug>(incsearch-forward)
@@ -112,6 +133,7 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
+
 " airline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
