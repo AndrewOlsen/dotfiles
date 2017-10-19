@@ -1,7 +1,7 @@
 # From code.fsociety.info
 
 auto-reload yes
-browser "[[ -n \"$( pgrep qutebrowser)\"  ]] && qutebrowser %u || w3m %u"
+browser "[[ -n \"$( pgrep QtWebEngine)\"  ]] && qutebrowser %u || w3m %u"
 feed-sort-order title-dec
 notify-format "newsbeuter:\n%n unread articles within %f unread feeds"
 notify-program notify-send

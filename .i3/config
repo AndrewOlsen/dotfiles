@@ -250,7 +250,7 @@ exec --no-startup-id dunst &
 exec_always --no-startup-id killall polybar; polybar i3
 
 # start compton
-exec --no-startup-id compton &
+#exec --no-startup-id compton &
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad

@@ -77,6 +77,9 @@ Plug 'haya14busa/incsearch.vim'
   map #  <Plug>(incsearch-nohl-#)
   map g* <Plug>(incsearch-nohl-g*)
   map g# <Plug>(incsearch-nohl-g#)
+
+"" fzf for vim
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
 
 "" Gundo settings

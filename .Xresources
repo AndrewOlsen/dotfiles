@@ -61,7 +61,7 @@ rofi.terminal:                       urxvtc -e
 rofi.levenshtein-sort:               true
 rofi.case-sensitive:                 false
 ! "Set the matching algorithm. (normal, regex, glob, fuzzy)" Set from: Default
-rofi.matching:                       fuzzy
+rofi.matching:                       normal
 ! rofi.line-margin:                    2
 ! rofi.line-padding:                   1
 rofi.separator-style:                none

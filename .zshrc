@@ -22,10 +22,10 @@ source $ZSH/oh-my-zsh.sh
 # Set personal aliases
 
 # Lazy directory change
-alias sec="cd ~/Documents/sec"
+alias sec="cd ~/Documents/code/sec"
 alias doc="cd ~/Documents/"
 alias code="cd ~/Documents/code/"
-alias pt="cd ~/Documents/code/pentesterlabs/"
+alias pt="cd ~/Documents/code/sec/webappsec/pentesterlabs"
 alias work="cd ~/Documents/work/"
 
 
@@ -45,7 +45,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 alias pu="pacaur -Syu"
 alias rainbowstream="workon rs; rainbowstream -iot; deactivate"
 alias screencap="ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i :0 -f pulse -i default -c:v ffvhuff -c:a flac /tmp/grab.mkv"
-alias passmenu='passmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b'
+alias passmenu='~/.scripts/passmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b'
 
 # Virtualenv
 export WORKON_HOME=~/.virtualenvs
@@ -64,3 +64,5 @@ function mm() {
 	mpv --no-video --ytdl-format=bestaudio ytdl://$id
 	rm ~/.config/polybar/mpv-title
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

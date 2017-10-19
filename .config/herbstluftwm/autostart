@@ -167,7 +167,9 @@ hc detect_monitors
 hc pad 0 35 0 0
 
 hc keybind $Mod-d spawn rofi -show run
-hc keybind $Mod-p spawn passmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b
+hc keybind $Mod-Control-p spawn ~/.scripts/passmenu --browse -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b
+hc keybind $Mod-Shift-p spawn ~/.scripts/passmenu --type --get user:password --enter -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b
+hc keybind $Mod-p spawn ~/.scripts/passmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b
 hc keybind $Mod-q spawn qutebrowser
 hc keybind $Mod-Shift-m spawn wal -i /home/andy/Pictures/walls -q -o wal-set
 hc keybind $Mod-Shift-s spawn spotify
