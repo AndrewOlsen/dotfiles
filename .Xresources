@@ -2,11 +2,11 @@
 URxvt.urgentOnBell: True
 
 ! Adobe Source Code Pro, emoji
-URxvt*font: \
-	xft:SauceCodePro Nerd Font:size=12,\
-	xft:Noto Color Emoji:style=Regular:antialias=false,\
-	xft:Liberation Mono:size=12\
-URxvt.letterSpace: 1
+!URxvt*font: \
+!	xft:SauceCodePro Nerd Font:size=12,\
+!	xft:Noto Color Emoji:style=Regular:antialias=false,\
+!	xft:Liberation Mono:size=12\
+!URxvt.letterSpace: 1
 
 ! Better font stuff
 Xft.autohint: false
@@ -18,8 +18,8 @@ Xft.antialias: true
 Xft.rgba: rgb
 
 ! Bitmap Font
-!URxvt*font: xft:xos4 Terminus:size=14
-!URxvt.letterSpace: 0
+URxvt*font: xft:xos4 Terminus:size=14,xft:Noto Color Emoji:style=Regular
+URxvt.letterSpace: 0
 
 ! Url stuff
 URxvt.keysym.Meta-semicolon: perl:url-select:select_next
@@ -51,7 +51,9 @@ URxvt.iso14755: False
 
 rofi.fullscreen:                     false
 !rofi.padding:                        200
-rofi.font:                           Source Code Pro 14
+!rofi.font:                           Source Code Pro 14
+rofi.font:			      xos4 Terminus 16
+
 rofi.location:                       0
 rofi.fixed-num-lines:                true
 rofi.lines:			10

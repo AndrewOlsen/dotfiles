@@ -43,7 +43,6 @@ alias t="todo.sh"
 alias clip="xclip -selection clipboard"
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 alias pu="pacaur -Syu"
-alias rainbowstream="workon rs; rainbowstream -iot; deactivate"
 alias screencap="ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i :0 -f pulse -i default -c:v ffvhuff -c:a flac /tmp/grab.mkv"
 alias passmenu='~/.scripts/passmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b'
 
