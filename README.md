@@ -30,7 +30,7 @@
 
 ### Terminal Programs
 * neomutt
-* newsbeuter
+* ~~newsbeuter~~ newsboat
 * weechat
 * rainbowstream
 * ranger
