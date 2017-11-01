@@ -1,0 +1,27 @@
+# From code.fsociety.info
+
+auto-reload yes
+browser "[[ -n \"$( pgrep QtWebEngine)\"  ]] && qutebrowser %u || w3m %u"
+feed-sort-order title-dec
+notify-format "newsbeuter:\n%n unread articles within %f unread feeds"
+notify-program notify-send
+html-renderer "w3m -dump -T text/html"
+player "mpv"
+
+bind-key j next
+bind-key k prev
+bind-key J next-feed
+bind-key K prev-feed
+bind-key j down article
+bind-key k up article
+bind-key J next article
+bind-key K prev article
+
+ignore-article "*" "title =~ \"Sponsor\""
+ignore-article "*" "title =~ \"Advertisement\""
+ignore-mode "display"
+
+
+color listfocus yellow black bold
+color listfocus_unread yellow black bold
+color info yellow black
