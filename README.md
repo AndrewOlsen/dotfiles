@@ -38,7 +38,7 @@
 * htop
 
 ### Music
-* mpd
+* mpd / mopidy
   * ncmpcpp
 * mpv
 * ytsearch
