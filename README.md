@@ -17,7 +17,7 @@
 * pywal
   * feh
   * scrot
-* Source Code Pro Nerd Font
+* Dina Font
 * rofi
 * dunst
   * an2linux
