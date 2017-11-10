@@ -17,8 +17,12 @@ Xft.hinting: true
 Xft.antialias: true
 Xft.rgba: rgb
 
-! Bitmap Font
-URxvt*font: xft:xos4 Terminus:size=14,xft:Noto Color Emoji:style=Regular
+! Terminus Font
+!URxvt*font: xft:xos4 Terminus:size=14,xft:Noto Color Emoji:style=Regular
+!URxvt.letterSpace: 0
+
+! Dina Font
+URxvt*font: xft:Dina:size=12,xft:Noto Color Emoji:style=Regular
 URxvt.letterSpace: 0
 
 ! Url stuff

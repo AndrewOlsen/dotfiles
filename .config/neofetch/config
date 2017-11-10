@@ -23,7 +23,8 @@ print_info() {
     info "Theme" theme
     info "Icons" icons
     info "Terminal" term
-    prin "Font" "Sauce Code Pro"
+    #info "Font" font
+    prin "Font" "Dina"
     info "CPU" cpu
     info "GPU" gpu
     #info "Memory" memory

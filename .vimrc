@@ -30,9 +30,6 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
 
-"" PEP 8 Python check
-Plug 'nvie/vim-flake8'
-
 "" Vim Unix Commands 
 ""   move, sudowrite, chmod, mkdir, rename, find
 Plug 'tpope/vim-eunuch'
