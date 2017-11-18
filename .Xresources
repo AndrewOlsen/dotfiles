@@ -56,7 +56,8 @@ URxvt.iso14755: False
 rofi.fullscreen:                     false
 !rofi.padding:                        200
 !rofi.font:                           Source Code Pro 14
-rofi.font:			      xos4 Terminus 16
+!rofi.font:			      xos4 Terminus 16
+rofi.font:			Dina 10
 
 rofi.location:                       0
 rofi.fixed-num-lines:                true

@@ -10,7 +10,7 @@
 ZSH_THEME="xero"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git archlinux sudo)
+plugins=(git sudo)
 
 # User configuration
 
