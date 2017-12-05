@@ -19,9 +19,9 @@ hc keyunbind --all
 # if you have a super key you will be much happier with Mod set to Mod4
 Mod=Mod4   # Use the super key as the main modifier
 
-hc keybind $Mod-Shift-e quit
+hc keybind $Mod-Control-e quit
 hc keybind $Mod-Shift-r reload
-hc keybind $Mod-Shift-q close
+hc keybind $Mod-Shift-q close_and_remove
 hc keybind $Mod-Return spawn ${TERMINAL:-urxvt} # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Shift-Return spawn termite
 
@@ -67,8 +67,8 @@ hc keybind $Mod-Control-Up      resize up +$resizestep
 hc keybind $Mod-Control-Right   resize right +$resizestep
 
 # tags
-tag_names=( {1..4} )
-tag_keys=( {1..4} 0 )
+tag_names=( {1..9} )
+tag_keys=( {1..9} 0 )
 
 hc rename default "${tag_names[0]}" || true
 for i in ${!tag_names[@]} ; do
