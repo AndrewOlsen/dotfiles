@@ -52,3 +52,4 @@
 * tty-clock
 * neofetch
 * zathura
+* [blurme](https://github.com/ganifladi/blurme)
