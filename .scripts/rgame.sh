@@ -15,7 +15,7 @@ esac
 echo "Polybar?"
 read -p " " yn
 case $yn in
-	[Yy]* ) exec polybar example &;;
+	[Yy]* ) exec polybar herb &;;
 esac
 
 echo "an2linux?"
@@ -30,10 +30,10 @@ case $yn in
 	[Yy]* ) systemctl start --user mpd.service;;
 esac
 
-echo "spotblock?"
+echo "mopidy?"
 read -p " " yn
 case $yn in
-	[Yy]* ) systemctl start --user spotblock.service;;
+	[Yy]* ) systemctl start --user mopidy.service;;
 esac
 
 echo "bitlbee?"

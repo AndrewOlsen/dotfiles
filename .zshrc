@@ -52,7 +52,7 @@ source /usr/bin/virtualenvwrapper.sh
 
 # Wal goodness
 source "$HOME/.cache/wal/colors.sh"
-(wal -r -q &)
+(cat ~/.cache/wal/sequences &)
 
 # Search for youtube music and give info to polybar
 function mm() {

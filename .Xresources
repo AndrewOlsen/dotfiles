@@ -1,6 +1,8 @@
 ! Make workspaces urgent. Mostly for weechat.
 URxvt.urgentOnBell: True
 
+Xcursor.size: 16
+
 ! Adobe Source Code Pro, emoji
 !URxvt*font: \
 !	xft:SauceCodePro Nerd Font:size=12,\

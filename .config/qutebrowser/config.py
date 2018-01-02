@@ -26,7 +26,7 @@ config.set('url.default_page', 'https://archlinux.org')
 config.set('url.start_pages', 'https://archlinux.org')
 
 # External Editor
-config.set('editor.command', ['urxvtc', '-e', 'vim', '{}'])
+config.set('editor.command', ['urxvt', '-e', 'vim', '{}'])
 config.set('content.private_browsing', True)
 config.set('content.xss_auditing', True)
 
@@ -41,7 +41,7 @@ config.set('content.webgl', False)
 # Search engines - allows searching via :open
 # Example: ':open google test' searches google for test
 # Defaults to searx instance if no engine specified
-config.set('url.searchengines', {"DEFAULT": "https://www.perfectpixel.de/searx/?q={}", "startpage": "https://www.startpage.com/do/dsearch?query={}&cat=web&pl=opensearch&language=english", "arch": "https://wiki.archlinux.org/index.php?title=Special:Search&search={}", "aur": "https://aur.archlinux.org/packages/?O=0&K={}", "youtube": "https://www.youtube.com/results?search_query={}&page={{startPage?}}", "google": "https://www.google.com/search?hl=en&q={}"})
+config.set('url.searchengines', {"DEFAULT": "https://duckduckgo.com/?q={}","sx": "https://www.perfectpixel.de/searx/?q={}", "sp": "https://www.startpage.com/do/dsearch?query={}&cat=web&pl=opensearch&language=english", "arch": "https://wiki.archlinux.org/index.php?title=Special:Search&search={}", "aur": "https://aur.archlinux.org/packages/?O=0&K={}", "yt": "https://www.youtube.com/results?search_query={}&page={{startPage?}}", "g": "https://www.google.com/search?hl=en&q={}", "d": "https://duckduckgo.com/?q={}"})
 
 # My custom keybinds
 # Spawn mpv or feh with current page or by using hints

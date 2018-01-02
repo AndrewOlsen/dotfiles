@@ -3,7 +3,7 @@
 auto-reload no
 browser "[[ -n \"$( pgrep QtWebEngine)\"  ]] && qutebrowser %u || w3m %u"
 feed-sort-order title-dec
-notify-format "newsbeuter:\n%n unread articles within %f unread feeds"
+notify-format "newsboat:\n%n unread articles within %f unread feeds"
 notify-program notify-send
 html-renderer "w3m -dump -T text/html"
 player "mpv"
@@ -16,6 +16,10 @@ bind-key j down article
 bind-key k up article
 bind-key j down tagselection
 bind-key k up tagselection
+bind-key j down podbeuter
+bind-key k up podbeuter
+bind-key j down urlview
+bind-key k up urlview
 bind-key J next article
 bind-key K prev article
 
@@ -27,3 +31,8 @@ ignore-mode "display"
 color listfocus yellow black bold
 color listfocus_unread yellow black bold
 color info yellow black
+
+# Podboat
+download-path "~/Videos"
+max-downloads 3
+player "mpv"
