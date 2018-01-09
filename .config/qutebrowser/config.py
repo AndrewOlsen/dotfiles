@@ -27,7 +27,7 @@ config.set('url.start_pages', 'https://archlinux.org')
 
 # External Editor
 config.set('editor.command', ['urxvt', '-e', 'vim', '{}'])
-config.set('content.private_browsing', True)
+config.set('content.private_browsing', False)
 config.set('content.xss_auditing', True)
 
 # Not so unique useragent and accept lang

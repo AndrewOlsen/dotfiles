@@ -10,11 +10,11 @@
 ZSH_THEME="xero"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git sudo)
+plugins=(git colored-man-pages sudo)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/bin/core_perl:/home/andy/.gem/ruby/2.4.0/bin:/home/andy/.local/bin/"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/bin/core_perl:/home/andy/.gem/ruby/2.4.0/bin:/home/andy/.local/bin/:/home/andy/.scripts/"
 export VISUAL="vim"
 
 source $ZSH/oh-my-zsh.sh
@@ -27,6 +27,8 @@ alias doc="cd ~/Documents/"
 alias code="cd ~/Documents/code/"
 alias pt="cd ~/Documents/code/sec/webappsec/pentesterlabs"
 alias work="cd ~/Documents/work/"
+alias rm="rm -i"
+alias cp="cp -i"
 
 
 # Quick config edits
@@ -65,3 +67,5 @@ function mm() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Syntax highlight
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

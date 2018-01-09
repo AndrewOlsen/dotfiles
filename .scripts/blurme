@@ -135,7 +135,7 @@ function transinit {
 
     # is it really necessary to render again
     if [ -f $REF ]; then
-        convert $(cat $ORIGINAL) -blur 2.4,1.2 $CMP
+        convert $COPYBG -blur 2.4,1.2 $CMP
         # create new transition images if newly created trans-0 and old trans-0 are not the same
         if ! cmp -s $CMP $REF; then
             if [ "$VERBOSE" = true ]; then echo 'BLURME: Seems like we have a new wallpaper which needs to be rendered.'; fi

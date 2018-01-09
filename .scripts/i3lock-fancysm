@@ -127,6 +127,10 @@ color5=$color5$ff
 #    # We have failed, lets get back to stock one
 #    "${i3lock_cmd[@]}"
 #fi
+
+# Pause dusnt
+pkill -u $USER -USR1 dunst
+
 i3lock -n -i "$image" \
     --insidecolor=373445ff --ringcolor=ffffffff --line-uses-inside \
     --keyhlcolor="$color2" --bshlcolor=d23c3dff --separatorcolor=00000000 \
@@ -134,6 +138,8 @@ i3lock -n -i "$image" \
     --ringvercolor=ffffffff --ringwrongcolor=ffffffff --indpos="x+86:y+1003" \
     --radius=15 --veriftext="" --wrongtext=""
 
+# Continue Dunst
+pkill -u $USER -USR2 dunst
 # As above, if we were passed -d/--desktop, we'll attempt to restore all windows
 # after unlocking.
 ${desktop} ${desktop:+-k off}
