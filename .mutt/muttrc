@@ -76,4 +76,4 @@ bind index K           previous-unread
 bind index J           next-unread
 bind index,pager R     group-reply
 
-macro attach 'V' "<pipe-entry>cat >~/.cache/mutt/mail.html && qutebrowser --target tab ~/.cache/mutt/mail.html &>/dev/null && rm ~/.cache/mutt/mail.html<enter>"
+macro attach 'V' "<pipe-entry>cat >~/.cache/mutt/mail.html && qutebrowser --target tab ~/.cache/mutt/mail.html &>/dev/null <enter>"

@@ -77,6 +77,9 @@ Plug 'haya14busa/incsearch.vim'
 
 "" fzf for vim
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+"" ember hbs plugin
+Plug 'joukevandermaas/vim-ember-hbs'
 call plug#end()
 
 "" Gundo settings

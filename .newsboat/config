@@ -2,7 +2,7 @@
 
 auto-reload no
 browser "[[ -n \"$( pgrep QtWebEngine)\"  ]] && qutebrowser %u || w3m %u"
-feed-sort-order title-dec
+feed-sort-order firsttag
 notify-format "newsboat:\n%n unread articles within %f unread feeds"
 notify-program notify-send
 html-renderer "w3m -dump -T text/html"

@@ -41,7 +41,7 @@ config.set('content.webgl', False)
 # Search engines - allows searching via :open
 # Example: ':open google test' searches google for test
 # Defaults to searx instance if no engine specified
-config.set('url.searchengines', {"DEFAULT": "https://duckduckgo.com/?q={}","sx": "https://www.perfectpixel.de/searx/?q={}", "sp": "https://www.startpage.com/do/dsearch?query={}&cat=web&pl=opensearch&language=english", "arch": "https://wiki.archlinux.org/index.php?title=Special:Search&search={}", "aur": "https://aur.archlinux.org/packages/?O=0&K={}", "yt": "https://www.youtube.com/results?search_query={}&page={{startPage?}}", "g": "https://www.google.com/search?hl=en&q={}", "d": "https://duckduckgo.com/?q={}"})
+config.set('url.searchengines', {"DEFAULT": "https://duckduckgo.com/?q={}", "sx": "https://www.perfectpixel.de/searx/?q={}", "sp": "https://www.startpage.com/do/dsearch?query={}&cat=web&pl=opensearch&language=english", "arch": "https://wiki.archlinux.org/index.php?title=Special:Search&search={}", "aur": "https://aur.archlinux.org/packages/?O=0&K={}", "yt": "https://www.youtube.com/results?search_query={}&page={{startPage?}}", "g": "https://www.google.com/search?hl=en&q={}", "d": "https://duckduckgo.com/?q={}"})
 
 # My custom keybinds
 # Spawn mpv or feh with current page or by using hints
@@ -63,11 +63,11 @@ config.bind('J', 'tab-prev')
 config.bind('K', 'tab-next')
 
 # Move new default keybinds from x to z
-config.unbind('xO', mode='normal')
-config.unbind('xb', mode='normal')
-config.unbind('xo', mode='normal')
-config.unbind('xt', mode='normal')
-config.unbind('xx', mode='normal')
+#config.unbind('xO', mode='normal')
+#config.unbind('xb', mode='normal')
+#config.unbind('xo', mode='normal')
+#config.unbind('xt', mode='normal')
+#config.unbind('xx', mode='normal')
 
 # All this so I can close tabs with just x and undo with X
 config.bind('x', 'tab-close')
@@ -77,3 +77,23 @@ config.bind('zb', 'config-cycle statusbar.hide')
 config.bind('zo', 'set-cmd-text -s :open -b')
 config.bind('zt', 'config-cycle tabs.show always switching')
 config.bind('zx', 'config-cycle statusbar.hide ;; config-cycle tabs.show always switching')
+
+# Keep mode on tab change
+config.set('tabs.persist_mode_on_change', True)
+
+# Only search after Enter
+config.set('search.incremental', False)
+
+# Get those fonts 8pt again
+config.set('fonts.completion.category', 'bold 8pt monospace')
+config.set('fonts.completion.entry', '8pt monospace')
+config.set('fonts.debug_console', '8pt monospace')
+config.set('fonts.downloads', '8pt monospace')
+config.set('fonts.hints', '8pt monospace')
+config.set('fonts.keyhint', '8pt monospace')
+config.set('fonts.messages.error', '8pt monospace')
+config.set('fonts.messages.info', '8pt monospace')
+config.set('fonts.messages.warning', '8pt monospace')
+config.set('fonts.prompts', '8pt monospace')
+config.set('fonts.statusbar', '8pt monospace')
+config.set('fonts.tabs', '8pt monospace')
