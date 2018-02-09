@@ -11,7 +11,8 @@ main() {
 
   if ["$artist" == ""]
   then
-	 artist="Spotify AD"
+	 artist="Spotify"
+	 title="Starting..."
   fi
 
   echo "$artist - $title"

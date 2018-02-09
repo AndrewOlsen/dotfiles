@@ -22,6 +22,7 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Control-e quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-q close_and_remove
+hc keybind $Mod-e close
 hc keybind $Mod-Return spawn ${TERMINAL:-urxvt} # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Shift-Return spawn termite
 
@@ -88,6 +89,7 @@ hc keybind $Mod-comma  use_index -1 --skip-visible
 hc keybind $Mod-r remove
 hc keybind $Mod-s floating toggle
 hc keybind $Mod-f fullscreen toggle
+hc keybind $Mod-Shift-f chain , attr clients.focus.ewmhnotify false , attr clients.focus.fullscreen false , attr clients.focus.ewmhnotify true
 hc keybind $Mod-t pseudotile toggle
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
@@ -168,10 +170,10 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 hc detect_monitors
 hc pad 0 35 0 0
 
-hc keybind $Mod-d spawn rofi -show run
-hc keybind $Mod-Control-p spawn ~/.scripts/passmenu --browse -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b
-hc keybind $Mod-Shift-p spawn ~/.scripts/passmenu --type --get user:password --enter -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b
-hc keybind $Mod-p spawn ~/.scripts/passmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b
+hc keybind $Mod-d spawn ~/.scripts/rofi_run_hlwm 
+hc keybind $Mod-Control-p spawn ~/.scripts/passmenu --browse -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b -fn 'Dina-12'
+hc keybind $Mod-Shift-p spawn ~/.scripts/passmenu --type --get user:password --enter -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b -fn 'Dina-12'
+hc keybind $Mod-p spawn ~/.scripts/passmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b -fn 'Dina-12'
 hc keybind $Mod-q spawn qutebrowser
 hc keybind $Mod-Shift-m spawn wal -i /home/andy/Pictures/walls -q
 hc keybind $Mod-Shift-s spawn spotify

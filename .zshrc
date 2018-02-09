@@ -38,9 +38,9 @@ alias pt="cd ~/Documents/code/sec/webappsec/pentesterlabs"
 alias work="cd ~/Documents/work"
 
 # Prevent stupidity
-alias rm="rm -i"
+alias rm='noglob timeout 3 rm -Iv --one-file-system'
 alias cp="cp -i"
-alias mv="mv -i"
+alias mv='timeout 8 mv -iv'
 
 # Quick config edits
 alias vimi3="vim ~/.i3/config"
@@ -55,7 +55,7 @@ alias t="todo.sh"
 alias clip="xclip -selection clipboard"
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 alias screencap="ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i :0 -f pulse -i default -c:v ffvhuff -c:a flac /tmp/grab.mkv"
-alias passmenu='~/.scripts/passmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b'
+alias passmenu='~/.scripts/passmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b -fn "Dina-12"'
 alias hc="herbstclient"
 alias pacaur="trizen"
 
@@ -87,7 +87,7 @@ export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
 
 # Wal goodness
-source "$HOME/.cache/wal/colors.sh"
+. ~/.cache/wal/colors.sh
 (cat ~/.cache/wal/sequences &)
 
 # FZF

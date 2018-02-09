@@ -22,12 +22,12 @@ c.statusbar.hide = False
 c.tabs.show = 'always'
 
 # Homepage
-config.set('url.default_page', 'https://archlinux.org')
-config.set('url.start_pages', 'https://archlinux.org')
+config.set('url.default_page', 'file:///home/andy/.startpage/index.html')
+config.set('url.start_pages', 'file:///home/andy/.startpage/index.html')
 
 # External Editor
 config.set('editor.command', ['urxvt', '-e', 'vim', '{}'])
-config.set('content.private_browsing', False)
+config.set('content.private_browsing', True)
 config.set('content.xss_auditing', True)
 
 # Not so unique useragent and accept lang
@@ -89,7 +89,7 @@ config.set('fonts.completion.category', 'bold 8pt monospace')
 config.set('fonts.completion.entry', '8pt monospace')
 config.set('fonts.debug_console', '8pt monospace')
 config.set('fonts.downloads', '8pt monospace')
-config.set('fonts.hints', '8pt monospace')
+config.set('fonts.hints', 'bold 8pt monospace')
 config.set('fonts.keyhint', '8pt monospace')
 config.set('fonts.messages.error', '8pt monospace')
 config.set('fonts.messages.info', '8pt monospace')

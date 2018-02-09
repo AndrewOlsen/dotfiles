@@ -19,8 +19,10 @@ shot_custom=false
 screen_info=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/')
 x_axis=$(cut -d 'x' -f1 <<< $screen_info)
 y_axis=$(cut -d 'x' -f2 <<< $screen_info)
-y_value=$((y_axis / 2 - 80))
-x_value=$((x_axis / 2 - 220))
+y_value=$((y_axis / 2))
+y_value=$((y_value - 80))
+x_value=$((x_axis / 2)) 
+x_value=$((x_value - 220))
 
 options="Options:
     -h, --help       This help menu.
@@ -135,7 +137,7 @@ i3lock -n -i "$image" \
     --insidecolor=373445ff --ringcolor=ffffffff --line-uses-inside \
     --keyhlcolor="$color2" --bshlcolor=d23c3dff --separatorcolor=00000000 \
     --insidevercolor="$color5" --insidewrongcolor=d23c3dff \
-    --ringvercolor=ffffffff --ringwrongcolor=ffffffff --indpos="x+86:y+1003" \
+    --ringvercolor=ffffffff --ringwrongcolor=ffffffff --indpos="x+80:$y_axis-80" \
     --radius=15 --veriftext="" --wrongtext=""
 
 # Continue Dunst

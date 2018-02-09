@@ -1,7 +1,6 @@
-! Make workspaces urgent. Mostly for weechat.
-URxvt.urgentOnBell: True
-
-Xcursor.size: 16
+!!!!!!!!!!!!!!
+! Xresources !
+!!!!!!!!!!!!!!
 
 ! Adobe Source Code Pro, emoji
 !URxvt*font: \
@@ -27,12 +26,28 @@ Xcursor.size: 16
 URxvt*font: xft:Dina:size=12,xft:Noto Color Emoji:style=Regular
 URxvt.letterSpace: 0
 
-! Url stuff
+!!!!!!!!!!!!
+! KEYBINDS !
+!!!!!!!!!!!!
+
+! Load perl extensions
+URxvt*perl-ext-common: default,clipboard,keyboard-select,url-select
+
+! Grab URLs with meta+;
 URxvt.keysym.Meta-semicolon: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/qutebrowser
 URxvt.url-select.underline: true
-URxvt*perl-ext-common: default,clipboard,keyboard-select,url-select
 URxvt.url-select.button: 1
+
+! Clipboard enable
+URxvt.keysym.Control-Shift-C: perl:clipboard:copy
+URxvt.keysym.Control-Shift-V: perl:clipboard:paste
+! Unbind the previous keybind so clipboard works
+URxvt.iso14755: False
+
+!!!!!!!!!
+! STYLE !
+!!!!!!!!
 
 URxvt*internalBorder: 20
 URxvt*cursorBlink: 1
@@ -42,18 +57,16 @@ URxvt*scrollBar: off
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
-! Clipboard enable
-URxvt.keysym.Control-Shift-C: perl:clipboard:copy
-URxvt.keysym.Control-Shift-V: perl:clipboard:paste
-URxvt.iso14755: False
+! Make workspaces urgent. Mostly for weechat.
+URxvt.urgentOnBell: True
 
-! Rofi 
+! Cursor
+Xcursor.size: 16
 
-!rofi.color-enabled: true
-!rofi.color-window: #393939, #393939, #3a9892
-!rofi.color-normal: #393939, #ffffff, #393939, #3a9892, #ffffff
-!rofi.color-active: #393939, #3a9892, #393939, #3a9892, #393939
-!rofi.color-urgent: #393939, #f3843d, #393939, #3a9892, #ffc39c
+
+!!!!!!!!
+! ROFI !
+!!!!!!!!
 
 rofi.fullscreen:                     false
 !rofi.padding:                        200
@@ -69,7 +82,6 @@ rofi.terminal:                       urxvtc -e
 ! "Use levenshtein sorting" Set from: Default
 rofi.levenshtein-sort:               true
 rofi.case-sensitive:                 false
-! "Set the matching algorithm. (normal, regex, glob, fuzzy)" Set from: Default
 rofi.matching:                       normal
 ! rofi.line-margin:                    2
 ! rofi.line-padding:                   1
