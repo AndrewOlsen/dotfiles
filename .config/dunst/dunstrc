@@ -154,7 +154,7 @@
     icon_position = left
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/Arc/status/16/:/usr/share/icons/Arc/devices/16/
+    # icon_folders = /usr/share/icons/Arc/status/16/:/usr/share/icons/Arc/devices/16/
 
     width = 0
 

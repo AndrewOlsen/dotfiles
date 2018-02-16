@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 if (( "$EUID" != 0 )); then 
 	echo "Non root"
@@ -9,7 +9,7 @@ echo "Running reflector..."
 reflector --age 8 --fastest 128 --latest 64 --number 32 --sort rate --save /etc/pacman.d/mirrorlist.new
 
 (
-cd /etc/pacman.d/
+cd /etc/pacman.d/ || exit 1
 pwd
 rm -i mirrorlist.bak
 mv -iv mirrorlist mirrorlist.bak

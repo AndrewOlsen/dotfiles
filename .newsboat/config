@@ -7,6 +7,7 @@ notify-format "newsboat:\n%n unread articles within %f unread feeds"
 notify-program notify-send
 html-renderer "w3m -dump -T text/html"
 player "mpv"
+max-items 100
 
 bind-key j next
 bind-key k prev

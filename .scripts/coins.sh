@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 #
 # Use coinmarketcap.com API to retrieve coin values in USD
 

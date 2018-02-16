@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Error Prevention: Multiple Instances ----------------------------------
 
-if [[ $(pgrep -cl blurme) > 1 ]]; then
+if [[ $(pgrep -cl blurme) -gt 1 ]]; then
     echo 'BLURME: Another instance of blurme me is already running.'
     echo '        Please kill it with fire (pkill blurme) first, then try running me again.'
     exit
@@ -57,13 +57,13 @@ fi
 # Working directory contains a copy of the original unblured image,
 # and its path.
 if [ -z "$WORKINGDIR" ]; then WORKINGDIR=/home/$USER/.local/share/blurme; fi
-if ! [ -d $WORKINGDIR ]; then mkdir $WORKINGDIR; fi
-if [ "$VERBOSE" = true ]; then echo 'BLURME: Workingdir is set to '$WORKINGDIR; fi
+if ! [ -d "$WORKINGDIR" ]; then mkdir "$WORKINGDIR"; fi
+if [ "$VERBOSE" = true ]; then echo 'BLURME: Workingdir is set to '"$WORKINGDIR"; fi
 
 # Cache directory contains all blurry rendered transition images.
 if [ -z "$CACHEDIR" ]; then CACHEDIR=/home/$USER/.cache/blurme; fi
-if ! [ -d $CACHEDIR ]; then mkdir $CACHEDIR; fi
-if [ "$VERBOSE" = true ]; then echo 'BLURME: Cache (contains transition images) is set to '$CACHEDIR; fi
+if ! [ -d "$CACHEDIR" ]; then mkdir "$CACHEDIR"; fi
+if [ "$VERBOSE" = true ]; then echo 'BLURME: Cache (contains transition images) is set to '"$CACHEDIR"; fi
 
 
 # Error Prevention: Blurry startup
@@ -76,27 +76,27 @@ if [ "$VERBOSE" = true ]; then echo 'BLURME: Cache (contains transition images) 
 # after reboot (no temp directory!).
 if [[ $(tail -n1 ~/.fehbg | cut -d "'" -f6) = "$CACHEDIR/trans-9" ]]; then
     # Reset wallpaper to original one
-    feh --bg-fill $(cat "$WORKINGDIR/original-bg")
+    feh --bg-fill "$(cat "$WORKINGDIR/original-bg")"
 fi
 
 
 if [ -z "$TIME" ]; then TIME=0.01; fi
 #echo "Transition time is set to: "$TIME
 
-CURRWORKSPACE=$(wmctrl -d | grep '*' | cut -d ' ' -f1)
+CURRWORKSPACE=$(wmctrl -d | grep '\*' | cut -d ' ' -f1)
 #echo "Current workspace: $CURRWORKSPACE"
 
-OPENWINDOWS=$(wmctrl -l | cut -d ' ' -f3 | grep $CURRWORKSPACE | wc -l)
+OPENWINDOWS=$(wmctrl -l | cut -d ' ' -f3 | grep -c "$CURRWORKSPACE")
 #echo "Open windows on workspace$CURRWORKSPACE: $WINDOWS"
 
 CURRWALLPAPER=$(tail -n1 ~/.fehbg | cut -d "'" -f6)
 #echo "Wallpaper path: $CURRWALLPAPER"
 
 ORIGINAL=$WORKINGDIR/original-bg
-echo $CURRWALLPAPER > $ORIGINAL
+echo "$CURRWALLPAPER" > "$ORIGINAL"
 
 COPYBG=$WORKINGDIR/copied-bg
-cp $(cat $ORIGINAL) $COPYBG
+cp "$(cat "$ORIGINAL")" "$COPYBG"
 
 
 
@@ -114,10 +114,11 @@ function create_images {
     while [ $i -lt "10" ]; do
         A=$(echo "($i + 1) * 2.4" | bc -l)
         B=$(echo "($i + 1) * 1.2" | bc -l)
-        convert $COPYBG -blur $A,$B $CACHEDIR/trans-$i
-        local PERC=$(echo "($i+1) * 10" | bc -l)
-        if [ "$VERBOSE" = true ]; then echo 'BLURME: '$PERC'%'; fi
-        i=$[$i+1]
+        convert "$COPYBG -blur $A,$B $CACHEDIR/trans-$i"
+        local PERC
+	PERC=$(echo "($i+1) * 10" | bc -l)
+        if [ "$VERBOSE" = true ]; then echo "BLURME: $PERC%"; fi
+	i=$((i+1))
     done
 
     if [ "$VERBOSE" = true ]; then echo 'BLURME: Done!'; fi
@@ -130,14 +131,14 @@ function transinit {
 
     if [ "$VERBOSE" = true ]; then
         echo "BLURME: Huh?! Background is not blurred, let's fix that!"
-        echo 'BLURME: Unblurred original wallpaper is '$(cat $ORIGINAL)
+        echo "BLURME: Unblurred original wallpaper is $(cat "$ORIGINAL")"
     fi
 
     # is it really necessary to render again
-    if [ -f $REF ]; then
-        convert $COPYBG -blur 2.4,1.2 $CMP
+    if [ -f "$REF" ]; then
+        convert "$COPYBG -blur 2.4,1.2 $CMP"
         # create new transition images if newly created trans-0 and old trans-0 are not the same
-        if ! cmp -s $CMP $REF; then
+        if ! cmp -s "$CMP $REF"; then
             if [ "$VERBOSE" = true ]; then echo 'BLURME: Seems like we have a new wallpaper which needs to be rendered.'; fi
             rm $CMP
             create_images
@@ -159,10 +160,11 @@ function transition {
     local j="0"
 
     while [ $j -lt "10" ]; do
-        feh --bg-fill $CACHEDIR/trans-$j
-        local PERC=$(echo "($j+1) * 10" | bc -l)
-        if [ "$VERBOSE" = true ]; then echo 'BLURME: '$PERC'%'; fi
-        j=$[$j+1]
+        feh --bg-fill "$CACHEDIR/trans-$j"
+        local PERC
+	PERC=$(echo "($j+1) * 10" | bc -l)
+        if [ "$VERBOSE" = true ]; then echo "BLURME: $PERC%"; fi
+	j=$((j+1))
         sleep $TIME
     done
     if [ "$VERBOSE" = true ]; then echo 'BLURME: Done!'; fi
@@ -175,19 +177,20 @@ function transition_rev {
     local j="9"
 
     while [ $j -ge "0" ]; do
-        feh --bg-fill $CACHEDIR/trans-$j
-        local PERC=$(echo "($j+1) * 10" | bc -l)
-        if [ "$VERBOSE" = true ]; then echo 'BLURME: '$PERC'%'; fi
-        j=$[$j-1]
+        feh --bg-fill "$CACHEDIR/trans-$j"
+        local PERC
+	PERC=$(echo "($j+1) * 10" | bc -l)
+        if [ "$VERBOSE" = true ]; then echo "BLURME: $PERC%"; fi
+	j=$((j-1))
         sleep $TIME
     done
 
-    feh --bg-fill $(cat $ORIGINAL)
+    feh --bg-fill "$(cat "$ORIGINAL")"
     if [ "$VERBOSE" = true ]; then echo 'BLURME: Done!'; fi
 }
 
 function finish {
-    feh --bg-fill $(cat $ORIGINAL)
+    feh --bg-fill "$(cat "$ORIGINAL")"
     exit
 }
 
@@ -197,27 +200,26 @@ function finish {
 trap finish EXIT
 trap finish SIGHUP
 trap finish SIGINT
-trap finish SIGKILL
 trap finish SIGTERM
 
 transinit
 
 while true; do
 
-    CURRWORKSPACE=$(wmctrl -d | grep '*' | cut -d ' ' -f1)
-    OPENWINDOWS=$(wmctrl -l | cut -d ' ' -f3 | grep $CURRWORKSPACE | wc -l)
+    CURRWORKSPACE=$(wmctrl -d | grep '\*' | cut -d ' ' -f1)
+    OPENWINDOWS=$(wmctrl -l | cut -d ' ' -f3 | grep -c "$CURRWORKSPACE")
     CURRWALLPAPER=$(tail -n1 ~/.fehbg | cut -d "'" -f6)
 
     # is any window or rofi open on current workspace
-    if [[ $OPENWINDOWS > 0 ]] || [[ $(pgrep -cl rofi) > 0 ]]  || [[ $(pidof $ADDBLUR) > 0 ]]; then
+    if [[ $OPENWINDOWS -gt 0 ]] || [[ $(pgrep -cl rofi) -gt 0 ]]  || [[ $(pidof "$ADDBLUR") -gt 0 ]]; then
         # is wallpaper not blurred
         if [ "$CURRWALLPAPER" != "$CACHEDIR/trans-9" ]; then
             # has wallpaper been changed
-            if [ "$CURRWALLPAPER" != "$(cat $ORIGINAL)" ]; then
+            if [ "$CURRWALLPAPER" != "$(cat "$ORIGINAL")" ]; then
                 # save current wallpapers path
-                echo $CURRWALLPAPER > $ORIGINAL
+                echo "$CURRWALLPAPER" > "$ORIGINAL"
                 # copy current wallpaper as reference
-                cp $(cat $ORIGINAL) $COPYBG
+                cp "$(cat "$ORIGINAL")" "$COPYBG"
                 # create transition images
                 transinit
             fi
@@ -226,7 +228,7 @@ while true; do
         fi
     else
         # no windows or rofi open and wallpaper is not the unblurred original
-        if [ "$CURRWALLPAPER" != "$(cat $ORIGINAL)" ]; then
+        if [ "$CURRWALLPAPER" != "$(cat "$ORIGINAL")" ]; then
             # unblur and set to original wallpaper
             transition_rev
         fi

@@ -74,9 +74,15 @@ Plug 'haya14busa/incsearch.vim'
   map #  <Plug>(incsearch-nohl-#)
   map g* <Plug>(incsearch-nohl-g*)
   map g# <Plug>(incsearch-nohl-g#)
+  let g:incsearch#consistent_n_direction = 1
+  let g:incsearch#auto_nohlsearch = 1
+  let g:incsearch#magic = '\v'
 
 "" fzf for vim
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+"" Rust configuration
+Plug 'rust-lang/rust.vim'
 
 "" ember hbs plugin
 Plug 'joukevandermaas/vim-ember-hbs'
@@ -147,3 +153,4 @@ let g:airline_symbols.whitespace = 'Ξ'
 "let g:airline_symbols.branch = ''
 "let g:airline_symbols.readonly = ''
 "let g:airline_symbols.linenr = ''
+"

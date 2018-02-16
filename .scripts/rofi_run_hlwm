@@ -9,19 +9,20 @@ fi
 # Get the currently active tag
 tag=$(herbstclient attr tags.focus.name)
 
-# Prints the path of of the binary in path selected by rofi
+# Prints the path of the binary in path selected by rofi
 rofiPrintPath() {
 	cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
 	if [ -d "$cachedir" ]; then
-		cache=$cachedir/dmenu_run
+		cache=$cachedir/rofi-3.runcache
+		hlwmcache=$cachedir/rofi-hlwm.runcache
 	else
-		cache=$HOME/.dmenu_cache # if no xdg dir, fall back to dotfile in ~
+		cache=$HOME/.rofi_cache # if no xdg dir, fall back to dotfile in ~
 	fi
 	IFS=:
-	if stest -dqr -n "$cache" $PATH; then
-		stest -flx $PATH | sort -u | tee "$cache" | rofi -dmenu -p 'run: ' "$@"
+	if stest -dqr -n "$hlwmcache" "$PATH"; then
+		cut -d ' ' -f2 "$cache" | tee "$hlwmcache" | rofi -dmenu -p 'run: ' "$@"
 	else
-		rofi -dmenu -p 'run: ' "$@" < "$cache"
+		rofi -dmenu -p 'run: ' "$@" < "$hlwmcache"
 	fi
 }
 
@@ -36,4 +37,4 @@ herbstclient add "$tag"
 # mark it as one-time-only rule.
 herbstclient rule prepend maxage="120" pid="$$" tag="$tag" once
 
-exec $selectedPath
+exec "$selectedPath"

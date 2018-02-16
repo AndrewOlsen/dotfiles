@@ -1,2 +1,2 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 urxvtc -name jiggle --geometry 1x1 -e jiggle.py

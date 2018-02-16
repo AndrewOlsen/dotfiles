@@ -1,6 +1,6 @@
 #!/bin/env bash
 user_interrupt(){
-	echo -e "\n\nKeyboard Interrupt detected. Exiting...\n"
+	echo -e "\\n\\nKeyboard Interrupt detected. Exiting...\\n"
 	exit
 }
 trap user_interrupt SIGINT
