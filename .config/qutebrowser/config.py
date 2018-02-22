@@ -26,13 +26,13 @@ config.set('url.default_page', 'file:///home/andy/.startpage/index.html')
 config.set('url.start_pages', 'file:///home/andy/.startpage/index.html')
 
 # External Editor
-config.set('editor.command', ['urxvt', '-e', 'vim', '{}'])
+config.set('editor.command', ['urxvtc', '-e', 'vim', '-f', '{}'])
 config.set('content.private_browsing', True)
 config.set('content.xss_auditing', True)
 
 # Not so unique useragent and accept lang
 config.set('content.headers.accept_language', 'en-US,en;q=0.5')
-config.set('content.headers.user_agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0')
+config.set('content.headers.user_agent', 'Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0')
 
 # open new tabs in background
 config.set('tabs.background', True)
@@ -97,3 +97,6 @@ config.set('fonts.messages.warning', '8pt monospace')
 config.set('fonts.prompts', '8pt monospace')
 config.set('fonts.statusbar', '8pt monospace')
 config.set('fonts.tabs', '8pt monospace')
+
+# ignore these parameters when yanking
+c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']

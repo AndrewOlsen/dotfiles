@@ -23,7 +23,7 @@ hc keybind $Mod-Control-e quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-q close_and_remove
 hc keybind $Mod-e close
-hc keybind $Mod-Return spawn ${TERMINAL:-urxvt} # use your $TERMINAL with xterm as fallback
+hc keybind $Mod-Return spawn "${TERMINAL:-urxvt}" # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Shift-Return spawn termite
 
 # basic movement
@@ -72,7 +72,7 @@ tag_names=( {1..9} )
 tag_keys=( {1..9} 0 )
 
 hc rename default "${tag_names[0]}" || true
-for i in ${!tag_names[@]} ; do
+for i in "${!tag_names[@]}" ; do
     hc add "${tag_names[$i]}"
     key="${tag_keys[$i]}"
     if ! [ -z "$key" ] ; then
@@ -116,17 +116,17 @@ hc keybind $Mod-i jumpto urgent
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
-hc set frame_border_active_color $color2
+hc set frame_border_active_color "$color2"
 hc set frame_border_normal_color '#717475'
 hc set frame_bg_normal_color '#717475'
-hc set frame_bg_active_color $color2
+hc set frame_bg_active_color "$color2"
 hc set frame_border_width 1
 hc set always_show_frame 0
 hc set frame_bg_transparent 1
 hc set frame_transparent_width 1
 hc set frame_gap 4
 
-hc attr theme.active.color $color2
+hc attr theme.active.color "$color2"
 hc attr theme.normal.color '#717475'
 hc attr theme.urgent.color red
 hc attr theme.inner_width 1
@@ -135,8 +135,8 @@ hc attr theme.border_width 3
 hc attr theme.floating.border_width 4
 hc attr theme.floating.outer_width 1
 hc attr theme.floating.outer_color black
-hc attr theme.active.inner_color $color2
-hc attr theme.active.outer_color $color2
+hc attr theme.active.inner_color "$color2"
+hc attr theme.active.outer_color "$color2"
 hc attr theme.background_color '#717475'
 
 hc set window_gap 0
@@ -183,6 +183,7 @@ hc keybind $Mod-z spawn zathura
 hc keybind XF86AudioLowerVolume spawn /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '-5%'
 hc keybind XF86AudioRaiseVolume spawn /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '+5%'
 hc keybind XF86AudioMute spawn /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
+hc keybind $Mod-Control-i spawn ~/.scripts/i3lock-fancysm -f ~/.startpage/dina10px.ttf
 
 hc keybind Print chain , spawn scrot ~/Pictures/scrot/hlwm_scrot_%m_%d_%Y_%T.png , spawn sleep 3 , spawn notify-send 'Screenshot Taken.'
 

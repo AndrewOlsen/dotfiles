@@ -153,4 +153,8 @@ let g:airline_symbols.whitespace = 'Ξ'
 "let g:airline_symbols.branch = ''
 "let g:airline_symbols.readonly = ''
 "let g:airline_symbols.linenr = ''
-"
+
+" ale settings
+let g:ale_lint_on_save=1
+let g:ale_lint_on_text_change=0
+nmap <F8> <Plug>(ale_fix)

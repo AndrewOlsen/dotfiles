@@ -2,7 +2,7 @@
 ![desktop](http://0x0.st/nPL.png)
 
 ## herbstluftwm
-![herbst](http://0x0.st/Fcw.png)
+![herbst](https://u.teknik.io/hHnXl.png)
 
 ## Programs
 
