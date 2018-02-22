@@ -4,7 +4,7 @@
 ## Programs
 
 ### Environment
-* herbstluftwm / i3 ([screenshot](https://u.teknik.io/hHnXl.png))
+* herbstluftwm / i3 ([screenshot](http://0x0.st/nPL.png))
 * urxvtd
 * termite (as a backup)
 * zsh
