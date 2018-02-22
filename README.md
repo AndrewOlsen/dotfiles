@@ -1,13 +1,10 @@
-## i3
-![desktop](http://0x0.st/nPL.png)
-
 ## herbstluftwm
 ![herbst](https://u.teknik.io/hHnXl.png)
 
 ## Programs
 
 ### Environment
-* herbstluftwm / i3
+* herbstluftwm / i3 ([screenshot](https://u.teknik.io/hHnXl.png))
 * urxvtd
 * termite (as a backup)
 * zsh
@@ -15,8 +12,9 @@
 * polybar
 * vim
 * pywal
-  * feh
+  * feh / sxiv
   * scrot
+  * [oomoxlify](https://github.com/actionless/oomox)
 * Dina Font
 * rofi
 * dunst
@@ -53,3 +51,4 @@
 * neofetch
 * zathura
 * [blurme](https://github.com/ganifladi/blurme)
+* [bum](https://github.com/dylanaraps/bum)
