@@ -20,9 +20,9 @@ rofiPrintPath() {
 	fi
 	IFS=:
 	if stest -dqr -n "$hlwmcache" "$PATH"; then
-		cut -d ' ' -f2 "$cache" | tee "$hlwmcache" | rofi -dmenu -p 'run: ' "$@"
+		cut -d ' ' -f2 "$cache" | tee "$hlwmcache" | rofi -dmenu -p 'run' "$@"
 	else
-		rofi -dmenu -p 'run: ' "$@" < "$hlwmcache"
+		rofi -dmenu -p 'run' "$@" < "$hlwmcache"
 	fi
 }
 

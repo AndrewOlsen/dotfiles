@@ -19,19 +19,19 @@
 !Xft.rgba: rgb
 
 ! Terminus Font
-!URxvt*font: xft:xos4 Terminus:size=14,xft:Noto Color Emoji:style=Regular
-!URxvt.letterSpace: 0
+URxvt*font: xft:xos4 Terminus:size=9,xft:Noto Color Emoji:style=Regular
+URxvt.letterSpace: 0
 
 ! Dina Font
-URxvt*font: xft:Dina:size=12,xft:Noto Emoji:size=10:style=Regular,xft:Symbola:size=10,xft:Unifont:size=8
-URxvt.letterSpace: 0
+!URxvt*font: xft:Dina:size=12,xft:Noto Emoji:size=10:style=Regular,xft:Symbola:size=10,xft:Unifont:size=8
+!URxvt.letterSpace: 0
 
 !!!!!!!!!!!!
 ! KEYBINDS !
 !!!!!!!!!!!!
 
 ! Load perl extensions
-URxvt*perl-ext-common: default,clipboard,keyboard-select,url-select
+URxvt*perl-ext-common: default,clipboard,keyboard-select,resize-font,url-select
 
 ! Grab URLs with meta+;
 URxvt.keysym.Meta-semicolon: perl:url-select:select_next

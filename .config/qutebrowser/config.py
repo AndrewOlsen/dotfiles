@@ -79,7 +79,7 @@ config.bind('zt', 'config-cycle tabs.show always switching')
 config.bind('zx', 'config-cycle statusbar.hide ;; config-cycle tabs.show always switching')
 
 # Keep mode on tab change
-config.set('tabs.persist_mode_on_change', True)
+config.set('tabs.mode_on_change', 'restore')
 
 # Only search after Enter
 config.set('search.incremental', False)
@@ -100,3 +100,7 @@ config.set('fonts.tabs', '8pt monospace')
 
 # ignore these parameters when yanking
 c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+
+# reddit
+with config.pattern('https://*.reddit.com/*'):
+    config.set('content.user_stylesheets', '/home/andy/.config/qutebrowser/reddit.css')

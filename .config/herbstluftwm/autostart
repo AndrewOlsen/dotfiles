@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ~/.cache/wal/colors.sh
+source "/home/andy/.cache/wal/colors.sh"
 # this is a simple config for herbstluftwm
 
 cmds=()
@@ -171,8 +171,8 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 hc detect_monitors
 hc pad 0 35 0 0
 
-hc keybind $Mod-d spawn rofi -show run
-hc keybind $Mod-Shift-d spawn ~/.scripts/rofi_run_hlwm
+hc keybind $Mod-d spawn dmenu_run_hlwm -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b -fn 'Dina-12'
+#hc keybind $Mod-Shift-d spawn ~/.scripts/rofi_run_hlwm
 hc keybind $Mod-Control-p spawn ~/.scripts/passmenu --browse -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b -fn 'Dina-12'
 hc keybind $Mod-Shift-p spawn ~/.scripts/passmenu --type --get user:password --enter -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b -fn 'Dina-12'
 hc keybind $Mod-p spawn ~/.scripts/passmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -b -fn 'Dina-12'

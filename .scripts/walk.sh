@@ -33,7 +33,7 @@ while :;
 do
 	countdown $(($1*60))
 	notify-send "Walk It Out" "It's time to get up and move around."
-	mpv --no-vid "$HOME/Music/Misc/my_dirty_old_kamel.wav" --really-quiet
+	mpv --no-vid "$HOME/Music/tracker/my_dirty_old_kamel.wav" --really-quiet --loop
 	read -r -n "1" -p "Restart? " "answer"
 	if [ "$answer" == "n" ]; then
 		tput cnorm

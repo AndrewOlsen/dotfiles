@@ -13,7 +13,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/herb]
-monitor = ${env:MONITOR:VGA-0}
+monitor = ${env:MONITOR:HDMI-0}
 monitor-fallback = ${env:MONITOR:LVDS}
 width = 100%
 height = 35
@@ -41,7 +41,7 @@ module-margin-right = 0
 ;font-0 = xos4 Terminus:size=13
 font-0 = Dina:size=10
 font-1 = FontAwesome:size=10;
-font-2 = Wuncon Siji:pixelsize=10
+font-2 = Siji:pixelsize=10
 
 modules-left = ewmh wlan eth temperature
 modules-center = date
@@ -49,7 +49,7 @@ modules-right = mpd spotify volume battery powermenu
 
 tray-position = right
 tray-padding = 1
-tray-transparent = false
+;tray-transparent = false
 tray-background = #5a00000
 ;tray-background = ${colors.primary}
 
@@ -90,7 +90,7 @@ modules-right = mpd spotify volume battery powermenu
 
 tray-position = right
 tray-padding = 1
-tray-transparent = false
+;tray-transparent = false
 tray-background = #5a00000
 ;tray-background = ${colors.primary}
 
@@ -342,7 +342,7 @@ format-padding = 1
 ;label = %date% %time%
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = <ramp-volume>  <label-volume>
 format-muted = <label-muted>
@@ -447,8 +447,8 @@ format-warn-prefix = " | "
 format-warn-underline = ${self.format-underline}
 format-padding = 1
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
